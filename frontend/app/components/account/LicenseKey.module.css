@@ -1,0 +1,46 @@
+.wrapper {
+    position: relative;
+    display: grid;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px dashed rgba(255, 255, 255, 0.18);
+    background: rgba(10, 15, 26, 0.6);
+}
+
+.text {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(10, 15, 26, 0.7);
+}
+
+.blurred {
+    filter: blur(8px);
+    opacity: 0.6;
+    user-select: none;
+}
+
+.dim {
+    position: absolute;
+    inset: 8px;
+    border-radius: 12px;
+    background: rgba(10, 15, 26, 0.65);
+    pointer-events: none;
+}
+
+.button {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    z-index: 2;
+}
+
+.buttonRevealed {
+    position: static;
+    margin: 0 auto;
+}

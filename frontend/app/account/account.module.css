@@ -1,0 +1,152 @@
+.page {
+    display: grid;
+    gap: 40px;
+}
+
+.heroRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.heroContent {
+    display: grid;
+    gap: 10px;
+}
+
+.sectionCard {
+    display: grid;
+    gap: 24px;
+}
+
+.cardHeader {
+    display: grid;
+    gap: 10px;
+}
+
+.ownedGrid {
+    display: grid;
+    gap: 28px;
+}
+
+.ownedCard {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 22px;
+    padding: 28px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(160deg, rgba(16, 24, 38, 0.9), rgba(11, 15, 26, 0.95));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ownedMedia {
+    display: grid;
+    gap: 12px;
+}
+
+.ownedImage {
+    height: 180px;
+    margin-bottom: 0;
+}
+
+.ownedContent {
+    display: grid;
+    gap: 18px;
+}
+
+.ownedHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.versions {
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 16px;
+    background: rgba(10, 15, 26, 0.6);
+}
+
+.versions summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: rgba(11, 15, 26, 0.85);
+}
+
+.versions summary::-webkit-details-marker {
+    display: none;
+}
+
+.versions summary::after {
+    content: '▾';
+    font-size: 12px;
+    color: #6ee7b7;
+}
+
+.versions[open] summary::after {
+    content: '▴';
+}
+
+.versionList {
+    display: grid;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.versionRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 15, 26, 0.6);
+}
+
+.list {
+    display: grid;
+    gap: 22px;
+}
+
+.orderCard,
+.licenseCard {
+    display: grid;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(15, 23, 42, 0.55);
+}
+
+.orderMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .heroRow {
+        align-items: flex-start;
+    }
+
+    .ownedCard {
+        grid-template-columns: 1fr;
+    }
+
+    .ownedImage {
+        height: 200px;
+    }
+}
