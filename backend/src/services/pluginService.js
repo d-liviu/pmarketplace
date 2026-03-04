@@ -343,11 +343,13 @@ async function listPlugins({ includeDrafts = false, search = '', tag = '', price
 
   const [rows] = await db.query(
     `SELECT p.id, p.name, p.slug, p.short_description, p.price, p.is_free, p.featured, p.status, p.created_at, p.updated_at,
+            p.owner_user_id, owner.username AS seller_username,
             GROUP_CONCAT(DISTINCT t.name ORDER BY t.name SEPARATOR ',') as tags
      FROM plugins p
      LEFT JOIN plugin_tags pt ON p.id = pt.plugin_id
      LEFT JOIN tags t ON pt.tag_id = t.id
      LEFT JOIN plugin_versions pv ON p.id = pv.plugin_id
+     LEFT JOIN users owner ON p.owner_user_id = owner.id
      ${whereClause}
      GROUP BY p.id
      ORDER BY p.featured DESC, p.created_at DESC`,
@@ -375,10 +377,11 @@ async function getPluginBySlug(slug, { includeDrafts = false } = {}) {
   }
 
   const [rows] = await db.query(
-    `SELECT p.*, GROUP_CONCAT(DISTINCT t.name ORDER BY t.name SEPARATOR ',') as tags
+    `SELECT p.*, owner.username AS seller_username, GROUP_CONCAT(DISTINCT t.name ORDER BY t.name SEPARATOR ',') as tags
      FROM plugins p
      LEFT JOIN plugin_tags pt ON p.id = pt.plugin_id
      LEFT JOIN tags t ON pt.tag_id = t.id
+     LEFT JOIN users owner ON p.owner_user_id = owner.id
      WHERE p.slug = ? ${statusFilter}
      GROUP BY p.id
      LIMIT 1`,
@@ -403,10 +406,11 @@ async function getPluginById(id) {
 
 async function getPluginWithRelationsById(id) {
   const [rows] = await db.query(
-    `SELECT p.*, GROUP_CONCAT(DISTINCT t.name ORDER BY t.name SEPARATOR ',') as tags
+    `SELECT p.*, owner.username AS seller_username, GROUP_CONCAT(DISTINCT t.name ORDER BY t.name SEPARATOR ',') as tags
      FROM plugins p
      LEFT JOIN plugin_tags pt ON p.id = pt.plugin_id
      LEFT JOIN tags t ON pt.tag_id = t.id
+     LEFT JOIN users owner ON p.owner_user_id = owner.id
      WHERE p.id = ?
      GROUP BY p.id
      LIMIT 1`,
@@ -444,14 +448,33 @@ async function ensureUniqueSlug(baseSlug, pluginId = null) {
   }
 }
 
-async function createPlugin(payload) {
+async function createPlugin(payload, options = {}) {
   const slugBase = payload.slug ? toSlug(payload.slug) : toSlug(payload.name)
   const safeSlugBase = slugBase || `plugin-${Date.now()}`
   const isFree = parseBoolean(payload.is_free)
-  const featured = parseBoolean(payload.featured)
-  const status = payload.status === 'published' ? 'published' : 'draft'
+  const featured = options.allowFeatured === false ? false : parseBoolean(payload.featured)
+  const requestedStatus = payload.status ? String(payload.status).trim().toLowerCase() : ''
+  const forcedStatus =
+    options.forceStatus === 'published'
+      ? 'published'
+      : options.forceStatus === 'draft'
+        ? 'draft'
+        : ''
+  const status = forcedStatus
+    ? forcedStatus
+    : requestedStatus === 'published'
+      ? 'published'
+      : requestedStatus === 'draft'
+        ? 'draft'
+        : options.defaultStatus === 'published'
+          ? 'published'
+          : 'draft'
   const parsedPrice = Number(payload.price || 0)
   const price = isFree ? 0 : Number.isNaN(parsedPrice) ? 0 : parsedPrice
+  const ownerUserId =
+    options.ownerUserId === undefined || options.ownerUserId === null
+      ? null
+      : Number(options.ownerUserId)
 
   const tags = normalizeTagsInput(payload.tags ?? payload.tagsCsv ?? payload.tags_csv)
 
@@ -483,6 +506,12 @@ async function createPlugin(payload) {
     throw error
   }
 
+  if (ownerUserId !== null && Number.isNaN(ownerUserId)) {
+    const error = new Error('ownerUserId must be a number')
+    error.status = 400
+    throw error
+  }
+
   const connection = await db.getConnection()
 
   try {
@@ -491,8 +520,8 @@ async function createPlugin(payload) {
     const slug = await ensureUniqueSlug(safeSlugBase)
 
     const [result] = await connection.query(
-      `INSERT INTO plugins (name, slug, short_description, full_description, price, is_free, status, featured)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO plugins (name, slug, short_description, full_description, price, is_free, status, featured, owner_user_id)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         payload.name,
         slug,
@@ -501,7 +530,8 @@ async function createPlugin(payload) {
         price,
         isFree,
         status,
-        featured
+        featured,
+        ownerUserId
       ]
     )
 
@@ -529,13 +559,40 @@ async function createPlugin(payload) {
   }
 }
 
-async function createVersion(pluginId, payload) {
+function ensurePluginMutationPermission(plugin, options = {}) {
+  if (!options.enforceOwnership) {
+    return
+  }
+
+  if (options.actorRole === 'admin') {
+    return
+  }
+
+  const pluginOwnerId =
+    plugin.owner_user_id === undefined || plugin.owner_user_id === null
+      ? null
+      : Number(plugin.owner_user_id)
+  const actorUserId =
+    options.actorUserId === undefined || options.actorUserId === null
+      ? null
+      : Number(options.actorUserId)
+
+  if (!pluginOwnerId || !actorUserId || Number.isNaN(actorUserId) || pluginOwnerId !== actorUserId) {
+    const error = new Error('You do not have permission to modify this plugin')
+    error.status = 403
+    throw error
+  }
+}
+
+async function createVersion(pluginId, payload, options = {}) {
   const plugin = await getPluginById(pluginId)
   if (!plugin) {
     const error = new Error('Plugin not found')
     error.status = 404
     throw error
   }
+
+  ensurePluginMutationPermission(plugin, options)
 
   const fromArray = normalizeVersionsInput(payload?.versions)
   const versions = fromArray.length > 0 ? fromArray : normalizeVersionsInput([payload || {}])
@@ -576,13 +633,15 @@ async function createVersion(pluginId, payload) {
   return rows[0] || null
 }
 
-async function updatePlugin(id, payload) {
+async function updatePlugin(id, payload, options = {}) {
   const existing = await getPluginById(id)
   if (!existing) {
     const error = new Error('Plugin not found')
     error.status = 404
     throw error
   }
+
+  ensurePluginMutationPermission(existing, options)
 
   const name = payload.name ?? existing.name
   const slugInput = payload.slug ? toSlug(payload.slug) : toSlug(name)
@@ -613,8 +672,41 @@ async function updatePlugin(id, payload) {
   return getPluginById(id)
 }
 
-async function deletePlugin(id) {
+async function deletePlugin(id, options = {}) {
+  const existing = await getPluginById(id)
+  if (!existing) {
+    return
+  }
+
+  ensurePluginMutationPermission(existing, options)
   await db.query('DELETE FROM plugins WHERE id = ?', [id])
+}
+
+async function getPluginsByOwner(ownerUserId) {
+  const [rows] = await db.query(
+    `SELECT p.id, p.name, p.slug, p.short_description, p.price, p.is_free, p.featured, p.status, p.created_at, p.updated_at,
+            p.owner_user_id, owner.username AS seller_username,
+            GROUP_CONCAT(DISTINCT t.name ORDER BY t.name SEPARATOR ',') as tags
+     FROM plugins p
+     LEFT JOIN plugin_tags pt ON p.id = pt.plugin_id
+     LEFT JOIN tags t ON pt.tag_id = t.id
+     LEFT JOIN users owner ON p.owner_user_id = owner.id
+     WHERE p.owner_user_id = ?
+     GROUP BY p.id
+     ORDER BY p.updated_at DESC`,
+    [ownerUserId]
+  )
+
+  const plugins = rows.map((row) => ({
+    ...row,
+    tags: normalizeTags(row)
+  }))
+
+  const mediaMap = await getPrimaryMediaMap(plugins.map((plugin) => plugin.id))
+  return plugins.map((plugin) => ({
+    ...plugin,
+    media: mediaMap[plugin.id] || []
+  }))
 }
 
 async function getVersions(pluginId) {
@@ -686,6 +778,7 @@ module.exports = {
   listPlugins,
   getPluginBySlug,
   getPluginById,
+  getPluginsByOwner,
   createPlugin,
   createVersion,
   updatePlugin,

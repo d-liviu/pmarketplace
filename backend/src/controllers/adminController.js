@@ -98,7 +98,7 @@ function canUseCloudinary() {
 async function uploadImageToCloudinary(buffer, fileName, contentType) {
   const cloudName = process.env.CLOUDINARY_CLOUD_NAME
   const uploadPreset = process.env.CLOUDINARY_UPLOAD_PRESET
-  const folder = process.env.CLOUDINARY_FOLDER || 'pmhub/plugins'
+  const folder = process.env.CLOUDINARY_FOLDER || 'pmarketplace/plugins'
 
   const endpoint = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`
   const formData = new FormData()

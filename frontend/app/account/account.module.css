@@ -90,7 +90,7 @@
 .versions summary::after {
     content: '▾';
     font-size: 12px;
-    color: #6ee7b7;
+    color: var(--accent-strong);
 }
 
 .versions[open] summary::after {

@@ -8,7 +8,7 @@ export default function CommunitySEO({ locale = 'en' }: { locale?: Locale }) {
                 <div className="section-heading">
                     <span>
                         {pickLocaleText(locale, {
-                            en: 'PocketMine community focus',
+                            en: 'Marketplace community focus',
                             fr: 'Focus communauté PocketMine',
                             es: 'Enfoque en la comunidad PocketMine',
                             'pt-br': 'Foco na comunidade PocketMine',
@@ -17,7 +17,7 @@ export default function CommunitySEO({ locale = 'en' }: { locale?: Locale }) {
                     </span>
                     <h2>
                         {pickLocaleText(locale, {
-                            en: 'PocketMine plugins made for Minecraft Bedrock servers.',
+                            en: 'A PocketMine marketplace for creators and buyers.',
                             fr: 'Des plugins PocketMine pensés pour les serveurs Minecraft Bedrock.',
                             es: 'Plugins PocketMine creados para servidores Minecraft Bedrock.',
                             'pt-br':
@@ -27,12 +27,12 @@ export default function CommunitySEO({ locale = 'en' }: { locale?: Locale }) {
                     </h2>
                     <p>
                         {pickLocaleText(locale, {
-                            en: 'PMHub helps server owners compare free and premium PocketMine plugins, choose faster, and run more stable Bedrock communities.',
-                            fr: 'PMHub aide les propriétaires de serveurs à comparer des plugins PocketMine gratuits et premium, choisir plus vite, et gérer des communautés Bedrock plus stables.',
-                            es: 'PMHub ayuda a dueños de servidores a comparar plugins PocketMine gratis y premium, elegir más rápido y mantener comunidades Bedrock más estables.',
+                            en: 'PMarketplace helps creators sell confidently and helps buyers find reliable plugins for real Bedrock production servers.',
+                            fr: 'PMarketplace aide les propriétaires de serveurs à comparer des plugins PocketMine gratuits et premium, choisir plus vite, et gérer des communautés Bedrock plus stables.',
+                            es: 'PMarketplace ayuda a dueños de servidores a comparar plugins PocketMine gratis y premium, elegir más rápido y mantener comunidades Bedrock más estables.',
                             'pt-br':
-                                'PMHub ajuda donos de servidores a comparar plugins PocketMine gratuitos e premium, escolher mais rápido e manter comunidades Bedrock mais estáveis.',
-                            de: 'PMHub hilft Serverbetreibern, kostenlose und Premium-PocketMine-Plugins zu vergleichen, schneller zu wählen und stabilere Bedrock-Communities zu betreiben.'
+                                'PMarketplace ajuda donos de servidores a comparar plugins PocketMine gratuitos e premium, escolher mais rápido e manter comunidades Bedrock mais estáveis.',
+                            de: 'PMarketplace hilft Serverbetreibern, kostenlose und Premium-PocketMine-Plugins zu vergleichen, schneller zu wählen und stabilere Bedrock-Communities zu betreiben.'
                         })}
                     </p>
                 </div>
@@ -41,7 +41,7 @@ export default function CommunitySEO({ locale = 'en' }: { locale?: Locale }) {
                     <div className="card">
                         <h3>
                             {pickLocaleText(locale, {
-                                en: 'Free PocketMine plugins',
+                                en: 'For buyers',
                                 fr: 'Plugins PocketMine gratuits',
                                 es: 'Plugins PocketMine gratis',
                                 'pt-br': 'Plugins PocketMine gratuitos',
@@ -50,7 +50,7 @@ export default function CommunitySEO({ locale = 'en' }: { locale?: Locale }) {
                         </h3>
                         <p>
                             {pickLocaleText(locale, {
-                                en: 'Start with free plugins to launch your PocketMine-MP stack, test gameplay ideas, and improve your Minecraft Bedrock server baseline.',
+                                en: 'Explore free and paid listings, compare features quickly, and purchase directly from independent creators.',
                                 fr: 'Commencez avec des plugins gratuits pour lancer votre stack PocketMine-MP, tester des idées gameplay et améliorer la base de votre serveur Bedrock.',
                                 es: 'Empieza con plugins gratis para lanzar tu stack PocketMine-MP, probar ideas de gameplay y mejorar la base de tu servidor Bedrock.',
                                 'pt-br':
@@ -62,7 +62,7 @@ export default function CommunitySEO({ locale = 'en' }: { locale?: Locale }) {
                     <div className="card">
                         <h3>
                             {pickLocaleText(locale, {
-                                en: 'Premium PocketMine plugins',
+                                en: 'For creators',
                                 fr: 'Plugins PocketMine premium',
                                 es: 'Plugins PocketMine premium',
                                 'pt-br': 'Plugins PocketMine premium',
@@ -71,7 +71,7 @@ export default function CommunitySEO({ locale = 'en' }: { locale?: Locale }) {
                         </h3>
                         <p>
                             {pickLocaleText(locale, {
-                                en: 'Scale with paid PocketMine plugins when you need deeper features, long-term support, and production-ready reliability.',
+                                en: 'List your plugin, publish updates, and grow revenue from a global audience of PocketMine server owners.',
                                 fr: 'Passez à des plugins payants quand vous avez besoin de fonctions avancées, d’un support durable et d’une fiabilité prête pour la prod.',
                                 es: 'Escala con plugins de pago cuando necesites funciones avanzadas, soporte duradero y fiabilidad para producción.',
                                 'pt-br':

@@ -13,7 +13,7 @@ import {
 export async function getRequestLocale(): Promise<Locale> {
     const headerStore = await headers()
 
-    const pathnameHeader = headerStore.get('x-pmhub-pathname')
+    const pathnameHeader = headerStore.get('x-pmarketplace-pathname')
     if (pathnameHeader) {
         const { locale: localeFromPath } = stripLocaleFromPathname(pathnameHeader)
         if (localeFromPath) {
@@ -21,7 +21,7 @@ export async function getRequestLocale(): Promise<Locale> {
         }
     }
 
-    const localeHeader = headerStore.get('x-pmhub-locale')
+    const localeHeader = headerStore.get('x-pmarketplace-locale')
     if (localeHeader) {
         return normalizeLocale(localeHeader)
     }
@@ -38,13 +38,13 @@ export async function getRequestLocale(): Promise<Locale> {
 export function getLocaleAlternates(pathname: string) {
     const languages = SUPPORTED_LOCALES.reduce<Record<string, string>>(
         (acc, locale) => {
-            acc[getLocaleHrefLang(locale)] = `https://pocketminehub.com${withLocalePath(pathname, locale)}`
+            acc[getLocaleHrefLang(locale)] = `https://pmarketplace.com${withLocalePath(pathname, locale)}`
             return acc
         },
         {}
     )
 
-    languages['x-default'] = `https://pocketminehub.com${withLocalePath(pathname, DEFAULT_LOCALE)}`
+    languages['x-default'] = `https://pmarketplace.com${withLocalePath(pathname, DEFAULT_LOCALE)}`
 
     return {
         languages

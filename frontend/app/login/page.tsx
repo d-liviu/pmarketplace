@@ -11,14 +11,14 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: pickLocaleText(locale, {
-            en: 'Sign in | PMHub',
-            fr: 'Connexion | PMHub',
-            es: 'Iniciar sesión | PMHub',
-            'pt-br': 'Entrar | PMHub',
-            de: 'Anmelden | PMHub'
+            en: 'Sign in | PMarketplace',
+            fr: 'Connexion | PMarketplace',
+            es: 'Iniciar sesión | PMarketplace',
+            'pt-br': 'Entrar | PMarketplace',
+            de: 'Anmelden | PMarketplace'
         }),
         description: pickLocaleText(locale, {
-            en: 'Sign in to manage your PocketMine plugin purchases.',
+            en: 'Sign in to manage your marketplace purchases and plugin listings.',
             fr: 'Connectez-vous pour gérer vos achats de plugins PocketMine.',
             es: 'Inicia sesión para gestionar tus compras de plugins PocketMine.',
             'pt-br': 'Entre para gerenciar suas compras de plugins PocketMine.',
@@ -62,7 +62,7 @@ export default async function LoginPage() {
                     </h1>
                     <p className="page-subtitle">
                         {pickLocaleText(locale, {
-                            en: 'Sign in to access your purchases and downloads.',
+                            en: 'Sign in to access purchases, licenses, downloads, and creator tools.',
                             fr: 'Connectez-vous pour accéder à vos achats et téléchargements.',
                             es: 'Inicia sesión para acceder a tus compras y descargas.',
                             'pt-br':
@@ -88,7 +88,7 @@ export default async function LoginPage() {
                         </h2>
                         <p>
                             {pickLocaleText(locale, {
-                                en: 'Manage licenses, download updates, and keep your PocketMine plugins organized.',
+                                en: 'Manage licenses, track orders, and publish plugin listings from one account.',
                                 fr: 'Gérez vos licences, téléchargez les mises à jour et gardez vos plugins PocketMine organisés.',
                                 es: 'Gestiona licencias, descarga actualizaciones y mantén tus plugins PocketMine organizados.',
                                 'pt-br':

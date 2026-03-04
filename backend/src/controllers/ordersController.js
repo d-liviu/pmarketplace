@@ -26,7 +26,7 @@ async function downloadReceipt(req, res, next) {
     res.setHeader('Content-Type', 'application/pdf')
     res.setHeader(
       'Content-Disposition',
-      `attachment; filename="pmhub-order-${order.id}.pdf"`
+      `attachment; filename="pmarketplace-order-${order.id}.pdf"`
     )
     res.send(pdfBuffer)
   } catch (error) {

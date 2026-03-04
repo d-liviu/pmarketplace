@@ -1,9 +1,27 @@
 const express = require('express')
 const controller = require('../controllers/pluginsController')
-const { requireAuth, optionalAuth } = require('../middleware/auth')
+const { requireAuth, optionalAuth, requireUser } = require('../middleware/auth')
 const { requireAdmin } = require('../middleware/admin')
 
 const router = express.Router()
+
+router.get('/my/plugins', requireAuth, requireUser, controller.listMyPlugins)
+router.post(
+  '/my/upload/phar',
+  requireAuth,
+  requireUser,
+  express.raw({ type: 'application/octet-stream', limit: '200mb' }),
+  controller.uploadMyPhar
+)
+router.post(
+  '/my/upload-image',
+  requireAuth,
+  requireUser,
+  express.raw({ type: '*/*', limit: '25mb' }),
+  controller.uploadMyImage
+)
+router.post('/my/plugins', requireAuth, requireUser, controller.createMyPlugin)
+router.post('/my/plugins/:id/versions', requireAuth, requireUser, controller.createMyVersion)
 
 router.get('/', optionalAuth, controller.listPlugins)
 router.get('/:slug', optionalAuth, controller.getPlugin)

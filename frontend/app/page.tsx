@@ -12,20 +12,20 @@ import { getLocaleAlternates, getRequestLocale } from './lib/requestLocale'
 export async function generateMetadata(): Promise<Metadata> {
     const locale = await getRequestLocale()
     const title = pickLocaleText(locale, {
-        en: 'Free & Premium PocketMine Plugins for Bedrock Servers | PMHub',
-        fr: 'Plugins PocketMine Gratuits & Premium pour serveurs Bedrock | PMHub',
-        es: 'Plugins PocketMine Gratis y Premium para servidores Bedrock | PMHub',
+        en: 'Buy & Sell PocketMine Plugins for Bedrock Servers | PMarketplace',
+        fr: 'Plugins PocketMine Gratuits & Premium pour serveurs Bedrock | PMarketplace',
+        es: 'Plugins PocketMine Gratis y Premium para servidores Bedrock | PMarketplace',
         'pt-br':
-            'Plugins PocketMine Gratuitos e Premium para servidores Bedrock | PMHub',
-        de: 'Kostenlose und Premium-PocketMine-Plugins für Bedrock-Server | PMHub'
+            'Plugins PocketMine Gratuitos e Premium para servidores Bedrock | PMarketplace',
+        de: 'Kostenlose und Premium-PocketMine-Plugins für Bedrock-Server | PMarketplace'
     })
     const description = pickLocaleText(locale, {
-        en: 'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers. PMHub helps server owners find high-quality plugins for economy, factions, moderation, performance, and gameplay.',
-        fr: 'Achetez des plugins PocketMine-MP gratuits et premium pour serveurs Minecraft Bedrock. PMHub aide les propriétaires à trouver des plugins performants pour économie, factions, modération et gameplay.',
-        es: 'Compra plugins PocketMine-MP gratis y premium para servidores Minecraft Bedrock. PMHub ayuda a dueños de servidores a encontrar plugins de calidad para economía, facciones, moderación, rendimiento y gameplay.',
+        en: 'PMarketplace is a creator marketplace where independent developers sell PocketMine-MP plugins and server owners buy trusted releases for Minecraft Bedrock.',
+        fr: 'Achetez des plugins PocketMine-MP gratuits et premium pour serveurs Minecraft Bedrock. PMarketplace aide les propriétaires à trouver des plugins performants pour économie, factions, modération et gameplay.',
+        es: 'Compra plugins PocketMine-MP gratis y premium para servidores Minecraft Bedrock. PMarketplace ayuda a dueños de servidores a encontrar plugins de calidad para economía, facciones, moderación, rendimiento y gameplay.',
         'pt-br':
-            'Compre plugins PocketMine-MP gratuitos e premium para servidores Minecraft Bedrock. A PMHub ajuda donos de servidores a encontrar plugins de qualidade para economia, facções, moderação, desempenho e gameplay.',
-        de: 'Kaufe kostenlose und Premium-PocketMine-MP-Plugins für Minecraft-Bedrock-Server. PMHub hilft Serverbetreibern, hochwertige Plugins für Wirtschaft, Fraktionen, Moderation, Performance und Gameplay zu finden.'
+            'Compre plugins PocketMine-MP gratuitos e premium para servidores Minecraft Bedrock. A PMarketplace ajuda donos de servidores a encontrar plugins de qualidade para economia, facções, moderação, desempenho e gameplay.',
+        de: 'Kaufe kostenlose und Premium-PocketMine-MP-Plugins für Minecraft-Bedrock-Server. PMarketplace hilft Serverbetreibern, hochwertige Plugins für Wirtschaft, Fraktionen, Moderation, Performance und Gameplay zu finden.'
     })
     const canonical = withLocalePath('/', locale)
 
@@ -42,6 +42,8 @@ export async function generateMetadata(): Promise<Metadata> {
             'free PocketMine plugins',
             'premium PocketMine plugins',
             'PocketMine server addons',
+            'sell PocketMine plugins',
+            'PocketMine creator marketplace',
             'plugins pocketmine gratuits',
             'plugins pocketmine payants',
             'serveur minecraft bedrock plugins'
@@ -49,14 +51,14 @@ export async function generateMetadata(): Promise<Metadata> {
         openGraph: {
             title,
             description,
-            url: `https://pocketminehub.com${canonical}`,
-            siteName: 'PMHub',
+            url: `https://pmarketplace.com${canonical}`,
+            siteName: 'PMarketplace',
             images: [
                 {
-                    url: '/hero.jpeg',
+                    url: '/images/marketplace-backdrop.jpg',
                     width: 1200,
                     height: 630,
-                    alt: 'PMHub PocketMine plugins'
+                    alt: 'PMarketplace community plugin marketplace'
                 }
             ],
             type: 'website',
@@ -66,7 +68,7 @@ export async function generateMetadata(): Promise<Metadata> {
             card: 'summary_large_image',
             title,
             description,
-            images: ['/hero.jpeg']
+            images: ['/images/marketplace-backdrop.jpg']
         },
         alternates: {
             canonical,
@@ -81,10 +83,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Home() {
     const locale = await getRequestLocale()
-    const localizedPluginsUrl = `https://pocketminehub.com${withLocalePath('/plugins', locale)}`
-    const localizedHomeUrl = `https://pocketminehub.com${withLocalePath('/', locale)}`
+    const localizedPluginsUrl = `https://pmarketplace.com${withLocalePath('/plugins', locale)}`
+    const localizedHomeUrl = `https://pmarketplace.com${withLocalePath('/', locale)}`
     const description = pickLocaleText(locale, {
-        en: 'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers.',
+        en: 'Buy from independent PocketMine creators or sell your own PocketMine-MP plugins.',
         fr: 'Achetez des plugins PocketMine-MP gratuits et premium pour serveurs Minecraft Bedrock.',
         es: 'Compra plugins PocketMine-MP gratis y premium para servidores Minecraft Bedrock.',
         'pt-br':
@@ -96,7 +98,7 @@ export default async function Home() {
         '@graph': [
             {
                 '@type': 'WebSite',
-                name: 'PMHub',
+                name: 'PMarketplace',
                 url: localizedHomeUrl,
                 description,
                 potentialAction: {
@@ -106,10 +108,10 @@ export default async function Home() {
                 },
                 publisher: {
                     '@type': 'Organization',
-                    name: 'PMHub',
+                    name: 'PMarketplace',
                     logo: {
                         '@type': 'ImageObject',
-                        url: 'https://pocketminehub.com/logo.png'
+                        url: 'https://pmarketplace.com/logo.png'
                     }
                 }
             },
@@ -124,7 +126,7 @@ export default async function Home() {
                 }),
                 url: localizedPluginsUrl,
                 description: pickLocaleText(locale, {
-                    en: 'Browse free and premium PocketMine plugins for Minecraft Bedrock servers.',
+                    en: 'Browse PocketMine plugins sold by independent creators for Minecraft Bedrock servers.',
                     fr: 'Parcourez des plugins PocketMine gratuits et premium pour serveurs Minecraft Bedrock.',
                     es: 'Explora plugins PocketMine gratis y premium para servidores Minecraft Bedrock.',
                     'pt-br':
@@ -147,34 +149,33 @@ export default async function Home() {
                         acceptedAnswer: {
                             '@type': 'Answer',
                             text: pickLocaleText(locale, {
-                                en: 'Yes. PMHub includes both free and premium PocketMine plugins for Minecraft Bedrock servers.',
-                                fr: 'Oui. PMHub propose à la fois des plugins PocketMine gratuits et premium pour serveurs Minecraft Bedrock.',
-                                es: 'Sí. PMHub incluye plugins PocketMine gratis y premium para servidores Minecraft Bedrock.',
+                                en: 'Yes. Independent creators list both free and premium PocketMine plugins on PMarketplace.',
+                                fr: 'Oui. PMarketplace propose à la fois des plugins PocketMine gratuits et premium pour serveurs Minecraft Bedrock.',
+                                es: 'Sí. PMarketplace incluye plugins PocketMine gratis y premium para servidores Minecraft Bedrock.',
                                 'pt-br':
-                                    'Sim. A PMHub inclui plugins PocketMine gratuitos e premium para servidores Minecraft Bedrock.',
-                                de: 'Ja. PMHub bietet kostenlose und Premium-PocketMine-Plugins für Minecraft-Bedrock-Server.'
+                                    'Sim. A PMarketplace inclui plugins PocketMine gratuitos e premium para servidores Minecraft Bedrock.',
+                                de: 'Ja. PMarketplace bietet kostenlose und Premium-PocketMine-Plugins für Minecraft-Bedrock-Server.'
                             })
                         }
                     },
                     {
                         '@type': 'Question',
                         name: pickLocaleText(locale, {
-                            en: 'Are PMHub plugins made for PocketMine-MP servers?',
-                            fr: 'Les plugins PMHub sont-ils conçus pour PocketMine-MP ?',
-                            es: '¿Los plugins de PMHub están hechos para PocketMine-MP?',
-                            'pt-br':
-                                'Os plugins da PMHub são feitos para servidores PocketMine-MP?',
-                            de: 'Sind PMHub-Plugins für PocketMine-MP-Server gemacht?'
+                            en: 'Can creators sell plugins on PMarketplace?',
+                            fr: 'Les créateurs peuvent-ils vendre des plugins sur PMarketplace ?',
+                            es: '¿Los creadores pueden vender plugins en PMarketplace?',
+                            'pt-br': 'Criadores podem vender plugins na PMarketplace?',
+                            de: 'Können Creator Plugins auf PMarketplace verkaufen?'
                         }),
                         acceptedAnswer: {
                             '@type': 'Answer',
                             text: pickLocaleText(locale, {
-                                en: 'Yes. PMHub focuses on PocketMine-MP plugins built for modern Minecraft Bedrock server communities.',
-                                fr: 'Oui. PMHub se concentre sur des plugins PocketMine-MP pour les communautés Minecraft Bedrock modernes.',
-                                es: 'Sí. PMHub se centra en plugins PocketMine-MP para comunidades modernas de servidores Minecraft Bedrock.',
+                                en: 'Yes. PMarketplace is built for creator listings, secure checkout, and license delivery for PocketMine-MP plugins.',
+                                fr: 'Oui. PMarketplace est conçu pour publier des plugins, encaisser les paiements en sécurité et livrer les licences instantanément.',
+                                es: 'Sí. PMarketplace está hecho para publicar plugins, procesar pagos seguros y entregar licencias al instante.',
                                 'pt-br':
-                                    'Sim. A PMHub foca em plugins PocketMine-MP para comunidades modernas de servidores Minecraft Bedrock.',
-                                de: 'Ja. PMHub konzentriert sich auf PocketMine-MP-Plugins für moderne Minecraft-Bedrock-Communities.'
+                                    'Sim. A PMarketplace foi feita para publicar plugins, processar pagamentos com segurança e entregar licenças instantaneamente.',
+                                de: 'Ja. PMarketplace ist für Creator-Listings, sicheren Checkout und sofortige Lizenzbereitstellung gebaut.'
                             })
                         }
                     }
@@ -192,7 +193,7 @@ export default async function Home() {
             <CallToAction locale={locale} />
 
             <Script
-                id="pmhub-structured-data"
+                id="pmarketplace-structured-data"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify(structuredData)

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import AdminPanel from '../../components/admin/AdminPanel'
 
 export const metadata: Metadata = {
-    title: 'Admin Panel | PMHub',
+    title: 'Admin Panel | PMarketplace',
     description: 'Private admin plugin publishing panel.',
     robots: {
         index: false,

@@ -72,8 +72,8 @@ export function middleware(request: NextRequest) {
         rewriteUrl.pathname = stripped.pathname
 
         const requestHeaders = new Headers(request.headers)
-        requestHeaders.set('x-pmhub-locale', stripped.locale)
-        requestHeaders.set('x-pmhub-pathname', pathname)
+        requestHeaders.set('x-pmarketplace-locale', stripped.locale)
+        requestHeaders.set('x-pmarketplace-pathname', pathname)
 
         const response = NextResponse.rewrite(rewriteUrl, {
             request: {

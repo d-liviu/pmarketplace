@@ -10,7 +10,7 @@ export default function CallToAction({ locale = 'en' }: { locale?: Locale }) {
                     <div>
                         <span className="cta-eyebrow">
                             {pickLocaleText(locale, {
-                                en: 'Ready to launch',
+                                en: 'Ready to list or buy',
                                 fr: 'Prêt à lancer',
                                 es: 'Listo para lanzar',
                                 'pt-br': 'Pronto para lançar',
@@ -19,7 +19,7 @@ export default function CallToAction({ locale = 'en' }: { locale?: Locale }) {
                         </span>
                         <h2>
                             {pickLocaleText(locale, {
-                                en: 'Upgrade your PocketMine server with the right plugins.',
+                                en: 'Join the PocketMine creator marketplace.',
                                 fr: 'Faites évoluer votre serveur PocketMine avec les bons plugins.',
                                 es: 'Haz crecer tu servidor PocketMine con los plugins correctos.',
                                 'pt-br':
@@ -29,7 +29,7 @@ export default function CallToAction({ locale = 'en' }: { locale?: Locale }) {
                         </h2>
                         <p>
                             {pickLocaleText(locale, {
-                                en: 'Compare free and premium PocketMine plugins, check pricing instantly, and deploy to your Minecraft Bedrock server faster.',
+                                en: 'Buy reliable plugins from independent developers, or publish your own plugin listing and start selling today.',
                                 fr: 'Comparez des plugins PocketMine gratuits et premium, vérifiez les prix instantanément, et déployez plus vite sur votre serveur Minecraft Bedrock.',
                                 es: 'Compara plugins PocketMine gratis y premium, revisa precios al instante y despliega más rápido en tu servidor Minecraft Bedrock.',
                                 'pt-br':
@@ -44,7 +44,7 @@ export default function CallToAction({ locale = 'en' }: { locale?: Locale }) {
                             className="btn-primary"
                         >
                             {pickLocaleText(locale, {
-                                en: 'Start shopping',
+                                en: 'Browse marketplace',
                                 fr: 'Commencer',
                                 es: 'Comenzar',
                                 'pt-br': 'Começar',
@@ -52,15 +52,15 @@ export default function CallToAction({ locale = 'en' }: { locale?: Locale }) {
                             })}
                         </Link>
                         <Link
-                            href={withLocalePath('/cart', locale)}
+                            href={withLocalePath('/account', locale)}
                             className="btn-secondary"
                         >
                             {pickLocaleText(locale, {
-                                en: 'View cart',
-                                fr: 'Voir le panier',
-                                es: 'Ver carrito',
-                                'pt-br': 'Ver carrinho',
-                                de: 'Warenkorb ansehen'
+                                en: 'Sell your plugin',
+                                fr: 'Vendre votre plugin',
+                                es: 'Vender tu plugin',
+                                'pt-br': 'Vender seu plugin',
+                                de: 'Plugin verkaufen'
                             })}
                         </Link>
                     </div>

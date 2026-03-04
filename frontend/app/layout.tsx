@@ -28,7 +28,7 @@ const displayFont = Space_Grotesk({
 function getCopy(locale: Locale) {
     if (locale === 'fr') {
         return {
-            title: 'Plugins PocketMine pour serveurs Minecraft Bedrock | PMHub',
+            title: 'Plugins PocketMine pour serveurs Minecraft Bedrock | PMarketplace',
             description:
                 'Découvrez des plugins PocketMine-MP gratuits et premium pour serveurs Minecraft Bedrock.',
             keywords: [
@@ -58,7 +58,7 @@ function getCopy(locale: Locale) {
 
     if (locale === 'es') {
         return {
-            title: 'Plugins PocketMine para servidores Minecraft Bedrock | PMHub',
+            title: 'Plugins PocketMine para servidores Minecraft Bedrock | PMarketplace',
             description:
                 'Descubre plugins PocketMine-MP gratuitos y premium para servidores Minecraft Bedrock.',
             keywords: [
@@ -88,7 +88,7 @@ function getCopy(locale: Locale) {
 
     if (locale === 'pt-br') {
         return {
-            title: 'Plugins PocketMine para servidores Minecraft Bedrock | PMHub',
+            title: 'Plugins PocketMine para servidores Minecraft Bedrock | PMarketplace',
             description:
                 'Descubra plugins PocketMine-MP gratuitos e premium para servidores Minecraft Bedrock.',
             keywords: [
@@ -118,7 +118,7 @@ function getCopy(locale: Locale) {
 
     if (locale === 'de') {
         return {
-            title: 'PocketMine-Plugins für Minecraft-Bedrock-Server | PMHub',
+            title: 'PocketMine-Plugins für Minecraft-Bedrock-Server | PMarketplace',
             description:
                 'Entdecke kostenlose und Premium-PocketMine-MP-Plugins für Minecraft-Bedrock-Server.',
             keywords: [
@@ -148,7 +148,7 @@ function getCopy(locale: Locale) {
 
     if (locale === 'it') {
         return {
-            title: 'Plugin PocketMine per server Minecraft Bedrock | PMHub',
+            title: 'Plugin PocketMine per server Minecraft Bedrock | PMarketplace',
             description:
                 'Scopri plugin PocketMine-MP gratuiti e premium per server Minecraft Bedrock.',
             keywords: [
@@ -178,7 +178,7 @@ function getCopy(locale: Locale) {
 
     if (locale === 'nl') {
         return {
-            title: 'PocketMine-plugins voor Minecraft Bedrock-servers | PMHub',
+            title: 'PocketMine-plugins voor Minecraft Bedrock-servers | PMarketplace',
             description:
                 'Ontdek gratis en premium PocketMine-MP-plugins voor Minecraft Bedrock-servers.',
             keywords: [
@@ -208,7 +208,7 @@ function getCopy(locale: Locale) {
 
     if (locale === 'pl') {
         return {
-            title: 'Pluginy PocketMine dla serwerów Minecraft Bedrock | PMHub',
+            title: 'Pluginy PocketMine dla serwerów Minecraft Bedrock | PMarketplace',
             description:
                 'Odkrywaj darmowe i premium pluginy PocketMine-MP dla serwerów Minecraft Bedrock.',
             keywords: [
@@ -238,7 +238,7 @@ function getCopy(locale: Locale) {
 
     if (locale === 'ru') {
         return {
-            title: 'Плагины PocketMine для серверов Minecraft Bedrock | PMHub',
+            title: 'Плагины PocketMine для серверов Minecraft Bedrock | PMarketplace',
             description:
                 'Откройте бесплатные и премиум плагины PocketMine-MP для серверов Minecraft Bedrock.',
             keywords: [
@@ -267,9 +267,9 @@ function getCopy(locale: Locale) {
     }
 
     return {
-        title: 'PocketMine Plugins for Minecraft Bedrock Servers | PMHub',
+        title: 'PocketMine Plugin Marketplace for Minecraft Bedrock | PMarketplace',
         description:
-            'Discover free and premium PocketMine-MP plugins for Minecraft Bedrock servers.',
+            'Buy PocketMine-MP plugins from independent creators or sell your own plugins to Minecraft Bedrock server owners.',
         keywords: [
             'PocketMine plugins',
             'PocketMine-MP plugins',
@@ -277,6 +277,8 @@ function getCopy(locale: Locale) {
             'free PocketMine plugins',
             'premium PocketMine plugins',
             'PocketMine plugin marketplace',
+            'sell PocketMine plugins',
+            'PocketMine creator marketplace',
             'plugins pocketmine gratuits',
             'plugins pocketmine payants'
         ],
@@ -305,20 +307,20 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         title: {
             default: copy.title,
-            template: '%s | PMHub'
+            template: '%s | PMarketplace'
         },
         description: copy.description,
         keywords: copy.keywords,
-        applicationName: 'PMHub',
-        metadataBase: new URL('https://pocketminehub.com'),
+        applicationName: 'PMarketplace',
+        metadataBase: new URL('https://pmarketplace.com'),
         alternates: {
             canonical,
             ...getLocaleAlternates('/')
         },
         openGraph: {
             type: 'website',
-            url: `https://pocketminehub.com${canonical}`,
-            siteName: 'PMHub',
+            url: `https://pmarketplace.com${canonical}`,
+            siteName: 'PMarketplace',
             title: copy.title,
             description: copy.description,
             locale: getOpenGraphLocale(locale)
@@ -332,7 +334,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export const viewport: Viewport = {
-    themeColor: '#0B0F1A'
+    themeColor: '#11131A'
 }
 
 export default async function RootLayout({
@@ -345,7 +347,7 @@ export default async function RootLayout({
     const cookieStore = await cookies()
     const isLoggedIn = Boolean(cookieStore.get('token')?.value)
     const headerStore = await headers()
-    const currentPath = headerStore.get('x-pmhub-pathname') || `/${locale}`
+    const currentPath = headerStore.get('x-pmarketplace-pathname') || `/${locale}`
     const currentWithoutLocale = stripLocaleFromPathname(currentPath).pathname
     const languageLabel =
         locale === 'fr'
@@ -431,16 +433,17 @@ export default async function RootLayout({
                             <Link
                                 href={withLocalePath('/', locale)}
                                 className="logo"
-                                aria-label="PMHub"
+                                aria-label="PMarketplace"
                             >
                                 <Image
                                     src="/logo.png"
-                                    alt="PMHub Logo"
+                                    alt="PMarketplace Logo"
                                     width={34}
                                     height={34}
+                                    className="logo-mark"
                                     priority
                                 />
-                                <span>PMHub</span>
+                                <span>PMarketplace</span>
                             </Link>
 
                             <nav className="nav-links" aria-label="Primary">
@@ -487,7 +490,7 @@ export default async function RootLayout({
 
                     <footer className="footer">
                         <div className="container footer-inner">
-                            <span>© {new Date().getFullYear()} PMHub</span>
+                            <span>© {new Date().getFullYear()} PMarketplace</span>
                             <div className="footer-links">
                                 <Link href={withLocalePath('/contact', locale)}>
                                     {copy.footer.contact}

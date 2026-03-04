@@ -102,14 +102,14 @@ export async function generateMetadata(): Promise<Metadata> {
     const locale = await getRequestLocale()
     const canonical = withLocalePath('/plugins', locale)
     const title = pickLocaleText(locale, {
-        en: 'PocketMine Plugins (Free & Premium) | PMHub',
-        fr: 'Plugins PocketMine (Gratuits & Premium) | PMHub',
-        es: 'Plugins PocketMine (Gratis y Premium) | PMHub',
-        'pt-br': 'Plugins PocketMine (Gratuitos e Premium) | PMHub',
-        de: 'PocketMine-Plugins (Kostenlos & Premium) | PMHub'
+        en: 'PocketMine Plugin Marketplace | PMarketplace',
+        fr: 'Plugins PocketMine (Gratuits & Premium) | PMarketplace',
+        es: 'Plugins PocketMine (Gratis y Premium) | PMarketplace',
+        'pt-br': 'Plugins PocketMine (Gratuitos e Premium) | PMarketplace',
+        de: 'PocketMine-Plugins (Kostenlos & Premium) | PMarketplace'
     })
     const description = pickLocaleText(locale, {
-        en: 'Browse free and premium PocketMine plugins for Minecraft Bedrock servers. Filter by tag, PocketMine version, and budget to find the right plugin fast.',
+        en: 'Browse PocketMine plugins sold by independent creators. Filter by tag, version, and budget to find the right plugin for your Bedrock server.',
         fr: 'Parcourez des plugins PocketMine gratuits et premium pour serveurs Minecraft Bedrock. Filtrez par tag, version PocketMine et budget pour trouver rapidement le bon plugin.',
         es: 'Explora plugins PocketMine gratis y premium para servidores Minecraft Bedrock. Filtra por etiqueta, versión de PocketMine y presupuesto para encontrar el plugin correcto.',
         'pt-br':
@@ -128,13 +128,14 @@ export async function generateMetadata(): Promise<Metadata> {
             'Minecraft Bedrock server plugins',
             'PocketMine-MP economy plugin',
             'PocketMine factions plugin',
+            'sell PocketMine plugins',
             'plugins pocketmine gratuits',
             'plugins pocketmine payants'
         ],
         openGraph: {
             title,
             description,
-            url: `https://pocketminehub.com${canonical}`,
+            url: `https://pmarketplace.com${canonical}`,
             type: 'website',
             locale: getOpenGraphLocale(locale)
         },
@@ -213,7 +214,7 @@ export default async function PluginsPage({
             'pt-br': 'Catálogo de plugins PocketMine',
             de: 'PocketMine-Plugin-Katalog'
         }),
-        url: `https://pocketminehub.com${withLocalePath('/plugins', locale)}`,
+        url: `https://pmarketplace.com${withLocalePath('/plugins', locale)}`,
         numberOfItems: plugins.length,
         itemListElement: plugins.map((plugin: Plugin, index: number) => {
             const href = getPluginHref(plugin)
@@ -222,7 +223,7 @@ export default async function PluginsPage({
             return {
                 '@type': 'ListItem',
                 position: index + 1,
-                url: `https://pocketminehub.com${withLocalePath(href, locale)}`,
+                url: `https://pmarketplace.com${withLocalePath(href, locale)}`,
                 item: {
                     '@type': 'Product',
                     name: plugin.name,
@@ -243,7 +244,7 @@ export default async function PluginsPage({
                 <div className="container">
                     <span className="hero-badge">
                         {pickLocaleText(locale, {
-                            en: 'Plugin catalog',
+                            en: 'Marketplace catalog',
                             fr: 'Catalogue de plugins',
                             es: 'Catálogo de plugins',
                             'pt-br': 'Catálogo de plugins',
@@ -252,7 +253,7 @@ export default async function PluginsPage({
                     </span>
                     <h1 className="page-title">
                         {pickLocaleText(locale, {
-                            en: 'All PocketMine plugins',
+                            en: 'All marketplace plugins',
                             fr: 'Tous les plugins PocketMine',
                             es: 'Todos los plugins PocketMine',
                             'pt-br': 'Todos os plugins PocketMine',
@@ -261,7 +262,7 @@ export default async function PluginsPage({
                     </h1>
                     <p className="page-subtitle">
                         {pickLocaleText(locale, {
-                            en: 'Discover free and paid PocketMine-MP plugins for Minecraft Bedrock servers, from economy systems to moderation and minigames.',
+                            en: 'Discover free and paid PocketMine-MP plugins from independent creators, from economy systems to moderation and minigames.',
                             fr: 'Découvrez des plugins PocketMine-MP gratuits et payants pour serveurs Minecraft Bedrock, des systèmes d’économie à la modération et aux mini-jeux.',
                             es: 'Descubre plugins PocketMine-MP gratis y de pago para servidores Minecraft Bedrock, desde economía hasta moderación y minijuegos.',
                             'pt-br':
@@ -280,7 +281,7 @@ export default async function PluginsPage({
                                 name="search"
                                 placeholder={
                                     pickLocaleText(locale, {
-                                        en: 'Search PocketMine plugins, tags, or features',
+                                        en: 'Search plugins, creators, tags, or features',
                                         fr: 'Rechercher des plugins PocketMine, tags ou fonctionnalités',
                                         es: 'Buscar plugins PocketMine, etiquetas o funciones',
                                         'pt-br':
@@ -380,7 +381,7 @@ export default async function PluginsPage({
                     {plugins.length === 0 ? (
                         <div className="empty-state">
                             {pickLocaleText(locale, {
-                                en: 'No plugins available right now. Please check back soon.',
+                                en: 'No plugins listed right now. Check back soon or publish the first listing.',
                                 fr: 'Aucun plugin disponible pour le moment. Revenez bientôt.',
                                 es: 'No hay plugins disponibles por ahora. Vuelve pronto.',
                                 'pt-br':

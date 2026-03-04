@@ -5,24 +5,24 @@ export default function ValueProps({ locale = 'en' }: { locale?: Locale }) {
     const benefits = pickLocaleText(locale, {
         en: [
             {
-                title: 'Security first',
+                title: 'Creator marketplace',
                 description:
-                    'PocketMine plugins built with permission-safe defaults for Bedrock server admins.'
+                    'Independent developers can publish and manage PocketMine plugin listings in one place.'
             },
             {
-                title: 'Rock-solid reliability',
+                title: 'Secure transactions',
                 description:
-                    'Stable plugin releases you can trust in production Minecraft Bedrock communities.'
+                    'Checkout, licensing, and delivery are built for safe purchases between buyers and creators.'
             },
             {
-                title: 'Maintainable core',
+                title: 'Trusted compatibility',
                 description:
-                    'Clean plugin architecture and readable configs for long-term PocketMine maintenance.'
+                    'Find plugins with clear PocketMine version info before you deploy to production servers.'
             },
             {
-                title: 'Performance tuned',
+                title: 'Fast updates',
                 description:
-                    'Optimized logic that helps keep tick times low on active Bedrock servers.'
+                    'Creators can ship new releases quickly so buyers always get current versions.'
             }
         ],
         fr: [
@@ -121,16 +121,16 @@ export default function ValueProps({ locale = 'en' }: { locale?: Locale }) {
                 <div className="section-heading">
                     <span>
                         {pickLocaleText(locale, {
-                            en: 'Why PocketMine admins choose PMHub',
-                            fr: 'Pourquoi les admins PocketMine choisissent PMHub',
-                            es: 'Por qué los admins de PocketMine eligen PMHub',
-                            'pt-br': 'Por que admins de PocketMine escolhem a PMHub',
-                            de: 'Warum PocketMine-Admins PMHub wählen'
+                            en: 'Why creators and server owners choose PMarketplace',
+                            fr: 'Pourquoi les admins PocketMine choisissent PMarketplace',
+                            es: 'Por qué los admins de PocketMine eligen PMarketplace',
+                            'pt-br': 'Por que admins de PocketMine escolhem a PMarketplace',
+                            de: 'Warum PocketMine-Admins PMarketplace wählen'
                         })}
                     </span>
                     <h2>
                         {pickLocaleText(locale, {
-                            en: 'Built for real PocketMine-MP server operations.',
+                            en: 'Built for buying and selling PocketMine-MP plugins.',
                             fr: 'Conçu pour des opérations PocketMine-MP réelles.',
                             es: 'Diseñado para operaciones reales de PocketMine-MP.',
                             'pt-br': 'Feito para operações reais de servidores PocketMine-MP.',
@@ -139,7 +139,7 @@ export default function ValueProps({ locale = 'en' }: { locale?: Locale }) {
                     </h2>
                     <p>
                         {pickLocaleText(locale, {
-                            en: 'Everything is designed to help Minecraft Bedrock server owners compare free and premium plugins quickly and deploy with confidence.',
+                            en: 'Everything is designed so creators can publish faster and buyers can compare listings, purchase securely, and deploy with confidence.',
                             fr: 'Tout est pensé pour aider les propriétaires de serveurs Minecraft Bedrock à comparer des plugins gratuits et premium rapidement, puis déployer en confiance.',
                             es: 'Todo está diseñado para ayudar a dueños de servidores Minecraft Bedrock a comparar plugins gratis y premium rápido, y desplegar con confianza.',
                             'pt-br':

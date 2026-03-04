@@ -10,25 +10,25 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: pickLocaleText(locale, {
-            en: 'Contact | PMHub',
-            fr: 'Contact | PMHub',
-            es: 'Contacto | PMHub',
-            'pt-br': 'Contato | PMHub',
-            de: 'Kontakt | PMHub'
+            en: 'Contact | PMarketplace',
+            fr: 'Contact | PMarketplace',
+            es: 'Contacto | PMarketplace',
+            'pt-br': 'Contato | PMarketplace',
+            de: 'Kontakt | PMarketplace'
         }),
         description: pickLocaleText(locale, {
-            en: 'Contact PMHub for PocketMine-MP plugin questions, free and premium plugin recommendations, and Minecraft Bedrock server support.',
-            fr: 'Contactez PMHub pour vos questions sur les plugins PocketMine-MP, des recommandations gratuites/premium, et du support serveur Minecraft Bedrock.',
-            es: 'Contacta con PMHub para dudas sobre plugins PocketMine-MP, recomendaciones gratis y premium, y soporte para servidores Minecraft Bedrock.',
+            en: 'Contact PMarketplace for seller onboarding, listing questions, billing issues, or purchase support.',
+            fr: 'Contactez PMarketplace pour vos questions sur les plugins PocketMine-MP, des recommandations gratuites/premium, et du support serveur Minecraft Bedrock.',
+            es: 'Contacta con PMarketplace para dudas sobre plugins PocketMine-MP, recomendaciones gratis y premium, y soporte para servidores Minecraft Bedrock.',
             'pt-br':
-                'Fale com a PMHub para dúvidas sobre plugins PocketMine-MP, recomendações gratuitas e premium, e suporte para servidores Minecraft Bedrock.',
-            de: 'Kontaktiere PMHub bei Fragen zu PocketMine-MP-Plugins, kostenlosen und Premium-Empfehlungen sowie Support für Minecraft-Bedrock-Server.'
+                'Fale com a PMarketplace para dúvidas sobre plugins PocketMine-MP, recomendações gratuitas e premium, e suporte para servidores Minecraft Bedrock.',
+            de: 'Kontaktiere PMarketplace bei Fragen zu PocketMine-MP-Plugins, kostenlosen und Premium-Empfehlungen sowie Support für Minecraft-Bedrock-Server.'
         }),
         keywords: [
-            'PocketMine plugin support',
+            'PocketMine marketplace support',
             'PocketMine-MP contact',
-            'Minecraft Bedrock server plugins help',
-            'free and premium PocketMine plugins'
+            'sell PocketMine plugins',
+            'Minecraft Bedrock plugin marketplace'
         ],
         alternates: {
             canonical,
@@ -47,7 +47,7 @@ export default async function ContactPage() {
                     <span className="hero-badge">Contact</span>
                     <h1 className="page-title">
                         {pickLocaleText(locale, {
-                            en: 'Let’s build your next plugin.',
+                            en: 'Need help buying or selling plugins?',
                             fr: 'Construisons votre prochain plugin.',
                             es: 'Construyamos tu próximo plugin.',
                             'pt-br': 'Vamos criar seu próximo plugin.',
@@ -56,7 +56,7 @@ export default async function ContactPage() {
                     </h1>
                     <p className="page-subtitle">
                         {pickLocaleText(locale, {
-                            en: 'Short questions, fast answers, and a clear path to delivery for your PocketMine-MP Minecraft Bedrock server.',
+                            en: 'Get fast support for marketplace accounts, plugin listings, payouts, and purchases.',
                             fr: 'Questions courtes, réponses rapides, et un plan clair de livraison pour votre serveur PocketMine-MP Minecraft Bedrock.',
                             es: 'Preguntas cortas, respuestas rápidas y un plan claro para tu servidor PocketMine-MP Minecraft Bedrock.',
                             'pt-br':
@@ -72,16 +72,16 @@ export default async function ContactPage() {
                     <div className="card contact-card">
                         <h2>
                             {pickLocaleText(locale, {
-                                en: 'PMHub support',
-                                fr: 'Support PMHub',
-                                es: 'Soporte PMHub',
-                                'pt-br': 'Suporte PMHub',
-                                de: 'PMHub-Support'
+                                en: 'PMarketplace support',
+                                fr: 'Support PMarketplace',
+                                es: 'Soporte PMarketplace',
+                                'pt-br': 'Suporte PMarketplace',
+                                de: 'PMarketplace-Support'
                             })}
                         </h2>
                         <p>
                             {pickLocaleText(locale, {
-                                en: 'We help PocketMine server owners choose the right free or premium plugins, or ship custom work quickly.',
+                                en: 'We help creators publish listings and help buyers with orders, licenses, and marketplace account issues.',
                                 fr: 'Nous aidons les propriétaires de serveurs PocketMine à choisir les bons plugins gratuits/premium, ou à livrer du sur-mesure rapidement.',
                                 es: 'Ayudamos a dueños de servidores PocketMine a elegir plugins gratis o premium correctos, o a entregar desarrollos personalizados rápido.',
                                 'pt-br':
@@ -122,7 +122,7 @@ export default async function ContactPage() {
                                 </h4>
                                 <p>
                                     {pickLocaleText(locale, {
-                                        en: 'Security, reliability, maintenance.',
+                                        en: 'Seller onboarding, billing, and listing help.',
                                         fr: 'Sécurité, fiabilité, maintenance.',
                                         es: 'Seguridad, fiabilidad y mantenimiento.',
                                         'pt-br': 'Segurança, confiabilidade e manutenção.',
@@ -135,11 +135,11 @@ export default async function ContactPage() {
                             src="/hero.jpeg"
                             fallbackSrc="/images/plugin-fallback.svg"
                             alt={pickLocaleText(locale, {
-                                en: 'PMHub support',
-                                fr: 'Support PMHub',
-                                es: 'Soporte PMHub',
-                                'pt-br': 'Suporte PMHub',
-                                de: 'PMHub-Support'
+                                en: 'PMarketplace support',
+                                fr: 'Support PMarketplace',
+                                es: 'Soporte PMarketplace',
+                                'pt-br': 'Suporte PMarketplace',
+                                de: 'PMarketplace-Support'
                             })}
                             className="media-image"
                         />
@@ -208,16 +208,16 @@ export default async function ContactPage() {
                                 </option>
                                 <option value="plugins">
                                     {pickLocaleText(locale, {
-                                        en: 'Plugin catalog',
+                                        en: 'Buying plugins',
                                         fr: 'Catalogue de plugins',
                                         es: 'Catálogo de plugins',
                                         'pt-br': 'Catálogo de plugins',
                                         de: 'Plugin-Katalog'
                                     })}
                                 </option>
-                                <option value="custom">
+                                <option value="seller">
                                     {pickLocaleText(locale, {
-                                        en: 'Custom build',
+                                        en: 'Seller onboarding',
                                         fr: 'Développement sur mesure',
                                         es: 'Desarrollo a medida',
                                         'pt-br': 'Desenvolvimento sob medida',
@@ -241,7 +241,7 @@ export default async function ContactPage() {
                                 name="message"
                                 placeholder={
                                     pickLocaleText(locale, {
-                                        en: 'Tell us about your server and goals.',
+                                        en: 'Tell us what you are trying to buy, sell, or publish.',
                                         fr: 'Parlez-nous de votre serveur et de vos objectifs.',
                                         es: 'Cuéntanos sobre tu servidor y tus objetivos.',
                                         'pt-br':
@@ -263,7 +263,7 @@ export default async function ContactPage() {
                             </button>
                             <button className="btn-secondary" type="button">
                                 {pickLocaleText(locale, {
-                                    en: 'Download catalog',
+                                    en: 'View seller guide',
                                     fr: 'Télécharger le catalogue',
                                     es: 'Descargar catálogo',
                                     'pt-br': 'Baixar catálogo',

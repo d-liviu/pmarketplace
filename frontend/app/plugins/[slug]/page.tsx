@@ -221,7 +221,7 @@ function toAbsoluteUrl(pathOrUrl: string) {
     }
 
     const path = pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`
-    return `https://pocketminehub.com${path}`
+    return `https://pmarketplace.com${path}`
 }
 
 export async function generateMetadata({
@@ -237,19 +237,19 @@ export async function generateMetadata({
         const canonical = withLocalePath(`/plugins/${slug}`, locale)
         return {
             title: pickLocaleText(locale, {
-                en: 'PocketMine Plugin Not Found | PMHub',
-                fr: 'Plugin PocketMine introuvable | PMHub',
-                es: 'Plugin PocketMine no encontrado | PMHub',
-                'pt-br': 'Plugin PocketMine não encontrado | PMHub',
-                de: 'PocketMine-Plugin nicht gefunden | PMHub'
+                en: 'PocketMine Plugin Not Found | PMarketplace',
+                fr: 'Plugin PocketMine introuvable | PMarketplace',
+                es: 'Plugin PocketMine no encontrado | PMarketplace',
+                'pt-br': 'Plugin PocketMine não encontrado | PMarketplace',
+                de: 'PocketMine-Plugin nicht gefunden | PMarketplace'
             }),
             description: pickLocaleText(locale, {
-                en: 'Browse free and premium PocketMine plugins for Minecraft Bedrock servers on PMHub.',
-                fr: 'Parcourez des plugins PocketMine gratuits et premium pour serveurs Minecraft Bedrock sur PMHub.',
-                es: 'Explora plugins PocketMine gratis y premium para servidores Minecraft Bedrock en PMHub.',
+                en: 'Browse PocketMine plugins from independent creators on PMarketplace.',
+                fr: 'Parcourez des plugins PocketMine gratuits et premium pour serveurs Minecraft Bedrock sur PMarketplace.',
+                es: 'Explora plugins PocketMine gratis y premium para servidores Minecraft Bedrock en PMarketplace.',
                 'pt-br':
-                    'Explore plugins PocketMine gratuitos e premium para servidores Minecraft Bedrock na PMHub.',
-                de: 'Durchsuche kostenlose und Premium-PocketMine-Plugins für Minecraft-Bedrock-Server auf PMHub.'
+                    'Explore plugins PocketMine gratuitos e premium para servidores Minecraft Bedrock na PMarketplace.',
+                de: 'Durchsuche kostenlose und Premium-PocketMine-Plugins für Minecraft-Bedrock-Server auf PMarketplace.'
             }),
             alternates: {
                 canonical,
@@ -264,7 +264,7 @@ export async function generateMetadata({
         plugin.full_description ??
         `${plugin.name} plugin for PocketMine-MP servers.`
     const description = pickLocaleText(locale, {
-        en: `${baseDescription} Compatible with Minecraft Bedrock servers running PocketMine-MP.`,
+        en: `${baseDescription} Listed on PMarketplace by an independent creator and compatible with Minecraft Bedrock servers running PocketMine-MP.`,
         fr: `${baseDescription} Compatible avec les serveurs Minecraft Bedrock sous PocketMine-MP.`,
         es: `${baseDescription} Compatible con servidores Minecraft Bedrock que usan PocketMine-MP.`,
         'pt-br': `${baseDescription} Compatível com servidores Minecraft Bedrock rodando PocketMine-MP.`,
@@ -277,11 +277,11 @@ export async function generateMetadata({
 
     return {
         title: pickLocaleText(locale, {
-            en: `${plugin.name} PocketMine Plugin | PMHub`,
-            fr: `${plugin.name} Plugin PocketMine | PMHub`,
-            es: `${plugin.name} Plugin PocketMine | PMHub`,
-            'pt-br': `${plugin.name} Plugin PocketMine | PMHub`,
-            de: `${plugin.name} PocketMine-Plugin | PMHub`
+            en: `${plugin.name} PocketMine Plugin | PMarketplace`,
+            fr: `${plugin.name} Plugin PocketMine | PMarketplace`,
+            es: `${plugin.name} Plugin PocketMine | PMarketplace`,
+            'pt-br': `${plugin.name} Plugin PocketMine | PMarketplace`,
+            de: `${plugin.name} PocketMine-Plugin | PMarketplace`
         }),
         description,
         keywords: [
@@ -297,25 +297,25 @@ export async function generateMetadata({
         },
         openGraph: {
             title: pickLocaleText(locale, {
-                en: `${plugin.name} PocketMine Plugin | PMHub`,
-                fr: `${plugin.name} Plugin PocketMine | PMHub`,
-                es: `${plugin.name} Plugin PocketMine | PMHub`,
-                'pt-br': `${plugin.name} Plugin PocketMine | PMHub`,
-                de: `${plugin.name} PocketMine-Plugin | PMHub`
+                en: `${plugin.name} PocketMine Plugin | PMarketplace`,
+                fr: `${plugin.name} Plugin PocketMine | PMarketplace`,
+                es: `${plugin.name} Plugin PocketMine | PMarketplace`,
+                'pt-br': `${plugin.name} Plugin PocketMine | PMarketplace`,
+                de: `${plugin.name} PocketMine-Plugin | PMarketplace`
             }),
             description,
-            url: `https://pocketminehub.com${canonical}`,
+            url: `https://pmarketplace.com${canonical}`,
             type: 'article',
             locale: getOpenGraphLocale(locale)
         },
         twitter: {
             card: 'summary',
             title: pickLocaleText(locale, {
-                en: `${plugin.name} PocketMine Plugin | PMHub`,
-                fr: `${plugin.name} Plugin PocketMine | PMHub`,
-                es: `${plugin.name} Plugin PocketMine | PMHub`,
-                'pt-br': `${plugin.name} Plugin PocketMine | PMHub`,
-                de: `${plugin.name} PocketMine-Plugin | PMHub`
+                en: `${plugin.name} PocketMine Plugin | PMarketplace`,
+                fr: `${plugin.name} Plugin PocketMine | PMarketplace`,
+                es: `${plugin.name} Plugin PocketMine | PMarketplace`,
+                'pt-br': `${plugin.name} Plugin PocketMine | PMarketplace`,
+                de: `${plugin.name} PocketMine-Plugin | PMarketplace`
             }),
             description
         }
@@ -357,7 +357,7 @@ export default async function PluginPage({
     const imageSrc = resolveMediaUrl(primaryMedia?.url) || fallbackImage
     const canonicalSlug = plugin.slug ?? slug
     const localizedPluginPath = withLocalePath(`/plugins/${canonicalSlug}`, locale)
-    const absolutePluginUrl = `https://pocketminehub.com${localizedPluginPath}`
+    const absolutePluginUrl = `https://pmarketplace.com${localizedPluginPath}`
     const offerSchema = getOfferSchema(plugin)
     const structuredData = {
         '@context': 'https://schema.org',
@@ -375,7 +375,7 @@ export default async function PluginPage({
                             'pt-br': 'Início',
                             de: 'Startseite'
                         }),
-                        item: `https://pocketminehub.com${withLocalePath('/', locale)}`
+                        item: `https://pmarketplace.com${withLocalePath('/', locale)}`
                     },
                     {
                         '@type': 'ListItem',
@@ -387,7 +387,7 @@ export default async function PluginPage({
                             'pt-br': 'Plugins',
                             de: 'Plugins'
                         }),
-                        item: `https://pocketminehub.com${withLocalePath('/plugins', locale)}`
+                        item: `https://pmarketplace.com${withLocalePath('/plugins', locale)}`
                     },
                     {
                         '@type': 'ListItem',
@@ -430,7 +430,7 @@ export default async function PluginPage({
                     <div>
                         <span className="hero-badge">
                             {pickLocaleText(locale, {
-                                en: 'PocketMine plugin for Minecraft Bedrock servers',
+                                en: 'Marketplace plugin for Minecraft Bedrock servers',
                                 fr: 'Plugin PocketMine pour serveurs Minecraft Bedrock',
                                 es: 'Plugin PocketMine para servidores Minecraft Bedrock',
                                 'pt-br':
@@ -442,7 +442,7 @@ export default async function PluginPage({
                         <p className="page-subtitle">
                             {plugin.short_description ??
                                 pickLocaleText(locale, {
-                                    en: 'A PocketMine-MP plugin built for secure, reliable Minecraft Bedrock gameplay.',
+                                    en: 'A creator-built PocketMine-MP plugin for secure, reliable Minecraft Bedrock gameplay.',
                                     fr: 'Un plugin PocketMine-MP conçu pour un gameplay Minecraft Bedrock fiable et sécurisé.',
                                     es: 'Un plugin PocketMine-MP creado para un gameplay seguro y fiable en Minecraft Bedrock.',
                                     'pt-br':
@@ -581,7 +581,7 @@ export default async function PluginPage({
                         </div>
                         <p>
                             {pickLocaleText(locale, {
-                                en: 'Instant access after checkout, with clear documentation and updates.',
+                                en: 'Sold by an independent creator. PMarketplace handles secure checkout, licensing, and instant access.',
                                 fr: 'Accès instantané après paiement, avec documentation claire et mises à jour.',
                                 es: 'Acceso instantáneo tras el pago, con documentación clara y actualizaciones.',
                                 'pt-br':
@@ -608,7 +608,7 @@ export default async function PluginPage({
                         <p>
                             {plugin.full_description ??
                                 pickLocaleText(locale, {
-                                    en: 'Solid architecture, clean configs, and reliable updates for your PocketMine-MP Minecraft Bedrock server.',
+                                    en: 'Solid architecture, clean configs, and reliable creator updates for your PocketMine-MP Minecraft Bedrock server.',
                                     fr: 'Architecture solide, configs propres et mises à jour fiables pour votre serveur PocketMine-MP Minecraft Bedrock.',
                                     es: 'Arquitectura sólida, configuraciones limpias y actualizaciones fiables para tu servidor PocketMine-MP Minecraft Bedrock.',
                                     'pt-br':

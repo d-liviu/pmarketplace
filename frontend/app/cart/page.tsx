@@ -32,11 +32,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: pickLocaleText(locale, {
-            en: 'Cart | PMHub',
-            fr: 'Panier | PMHub',
-            es: 'Carrito | PMHub',
-            'pt-br': 'Carrinho | PMHub',
-            de: 'Warenkorb | PMHub'
+            en: 'Cart | PMarketplace',
+            fr: 'Panier | PMarketplace',
+            es: 'Carrito | PMarketplace',
+            'pt-br': 'Carrinho | PMarketplace',
+            de: 'Warenkorb | PMarketplace'
         }),
         description: pickLocaleText(locale, {
             en: 'Review your PocketMine-MP plugin selections before checkout.',

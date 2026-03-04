@@ -3,6 +3,7 @@ import { apiFetch } from '../lib/api'
 import { getApiBaseUrl } from '../lib/apiBase'
 import LicenseKey from '../components/account/LicenseKey'
 import LogoutButton from '../components/account/LogoutButton'
+import SellerPublisher from '../components/account/SellerPublisher'
 import MediaImage from '../components/plugins/MediaImage'
 import { type Locale, withLocalePath } from '../lib/i18n'
 import { pickLocaleText } from '../lib/localeText'
@@ -59,11 +60,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: pickLocaleText(locale, {
-            en: 'Account | PMHub',
-            fr: 'Compte | PMHub',
-            es: 'Cuenta | PMHub',
-            'pt-br': 'Conta | PMHub',
-            de: 'Konto | PMHub'
+            en: 'Account | PMarketplace',
+            fr: 'Compte | PMarketplace',
+            es: 'Cuenta | PMarketplace',
+            'pt-br': 'Conta | PMarketplace',
+            de: 'Konto | PMarketplace'
         }),
         description: pickLocaleText(locale, {
             en: 'Manage your PocketMine plugin licenses and downloads.',
@@ -239,6 +240,8 @@ export default async function AccountPage() {
 
             <section className="section">
                 <div className={`container ${styles.page}`}>
+                    <SellerPublisher />
+
                     <div className={`card ${styles.sectionCard}`}>
                         <div className={styles.cardHeader}>
                             <h2>

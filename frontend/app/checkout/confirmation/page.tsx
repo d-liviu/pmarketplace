@@ -10,11 +10,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: pickLocaleText(locale, {
-            en: 'Order confirmed | PMHub',
-            fr: 'Commande confirmée | PMHub',
-            es: 'Pedido confirmado | PMHub',
-            'pt-br': 'Pedido confirmado | PMHub',
-            de: 'Bestellung bestätigt | PMHub'
+            en: 'Order confirmed | PMarketplace',
+            fr: 'Commande confirmée | PMarketplace',
+            es: 'Pedido confirmado | PMarketplace',
+            'pt-br': 'Pedido confirmado | PMarketplace',
+            de: 'Bestellung bestätigt | PMarketplace'
         }),
         description: pickLocaleText(locale, {
             en: 'Your PocketMine plugin order has been confirmed.',

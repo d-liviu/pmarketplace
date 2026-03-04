@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS asset_files (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  file_id CHAR(36) NOT NULL,
+  original_name VARCHAR(255) NOT NULL,
+  stored_name VARCHAR(255) NOT NULL,
+  stored_path VARCHAR(1024) NOT NULL,
+  mime_type VARCHAR(255) NOT NULL,
+  size_bytes BIGINT UNSIGNED NOT NULL,
+  extension VARCHAR(32) NOT NULL,
+  kind ENUM('image', 'phar', 'any') NOT NULL DEFAULT 'any',
+  bucket VARCHAR(64) NOT NULL DEFAULT 'default',
+  visibility ENUM('public', 'private') NOT NULL DEFAULT 'public',
+  source_app VARCHAR(64) DEFAULT NULL,
+  sha256 CHAR(64) DEFAULT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  deleted_at TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY uniq_asset_files_file_id (file_id),
+  KEY idx_asset_files_visibility_created_at (visibility, created_at),
+  KEY idx_asset_files_source_app_created_at (source_app, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

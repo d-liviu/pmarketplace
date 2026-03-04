@@ -18,7 +18,7 @@ export default function robots(): MetadataRoute.Robots {
                 ]
             }
         ],
-        sitemap: 'https://pocketminehub.com/sitemap.xml',
-        host: 'https://pocketminehub.com'
+        sitemap: 'https://pmarketplace.com/sitemap.xml',
+        host: 'https://pmarketplace.com'
     }
 }

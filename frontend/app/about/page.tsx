@@ -9,25 +9,26 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: pickLocaleText(locale, {
-            en: 'About PMHub | PocketMine Plugin Marketplace',
-            fr: 'À propos de PMHub | Marketplace de plugins PocketMine',
-            es: 'Sobre PMHub | Marketplace de plugins PocketMine',
-            'pt-br': 'Sobre a PMHub | Marketplace de plugins PocketMine',
-            de: 'Über PMHub | PocketMine-Plugin-Marktplatz'
+            en: 'About PMarketplace | PocketMine Creator Marketplace',
+            fr: 'À propos de PMarketplace | Marketplace de plugins PocketMine',
+            es: 'Sobre PMarketplace | Marketplace de plugins PocketMine',
+            'pt-br': 'Sobre a PMarketplace | Marketplace de plugins PocketMine',
+            de: 'Über PMarketplace | PocketMine-Plugin-Marktplatz'
         }),
         description: pickLocaleText(locale, {
-            en: 'Learn how PMHub helps the PocketMine community find free and premium plugins for Minecraft Bedrock servers.',
-            fr: 'Découvrez comment PMHub aide la communauté PocketMine à trouver des plugins gratuits et premium pour serveurs Minecraft Bedrock.',
-            es: 'Descubre cómo PMHub ayuda a la comunidad PocketMine a encontrar plugins gratis y premium para servidores Minecraft Bedrock.',
+            en: 'Learn how PMarketplace connects PocketMine plugin creators with Minecraft Bedrock server owners.',
+            fr: 'Découvrez comment PMarketplace aide la communauté PocketMine à trouver des plugins gratuits et premium pour serveurs Minecraft Bedrock.',
+            es: 'Descubre cómo PMarketplace ayuda a la comunidad PocketMine a encontrar plugins gratis y premium para servidores Minecraft Bedrock.',
             'pt-br':
-                'Descubra como a PMHub ajuda a comunidade PocketMine a encontrar plugins gratuitos e premium para servidores Minecraft Bedrock.',
-            de: 'Erfahre, wie PMHub der PocketMine-Community hilft, kostenlose und Premium-Plugins für Minecraft-Bedrock-Server zu finden.'
+                'Descubra como a PMarketplace ajuda a comunidade PocketMine a encontrar plugins gratuitos e premium para servidores Minecraft Bedrock.',
+            de: 'Erfahre, wie PMarketplace der PocketMine-Community hilft, kostenlose und Premium-Plugins für Minecraft-Bedrock-Server zu finden.'
         }),
         keywords: [
             'PocketMine community',
             'PocketMine plugin marketplace',
             'Minecraft Bedrock server plugins',
-            'free and premium PocketMine plugins'
+            'free and premium PocketMine plugins',
+            'sell PocketMine plugins'
         ],
         alternates: {
             canonical,
@@ -54,7 +55,7 @@ export default async function AboutPage() {
                     </span>
                     <h1 className="page-title">
                         {pickLocaleText(locale, {
-                            en: 'Built for serious PocketMine servers.',
+                            en: 'Built for the PocketMine creator economy.',
                             fr: 'Conçu pour les serveurs PocketMine ambitieux.',
                             es: 'Diseñado para servidores PocketMine serios.',
                             'pt-br': 'Feito para servidores PocketMine de verdade.',
@@ -63,12 +64,12 @@ export default async function AboutPage() {
                     </h1>
                     <p className="page-subtitle">
                         {pickLocaleText(locale, {
-                            en: 'PMHub helps Minecraft Bedrock server owners find secure, reliable, and maintainable PocketMine-MP plugins.',
-                            fr: 'PMHub aide les propriétaires de serveurs Minecraft Bedrock à trouver des plugins PocketMine-MP sûrs, fiables et maintenables.',
-                            es: 'PMHub ayuda a dueños de servidores Minecraft Bedrock a encontrar plugins PocketMine-MP seguros, fiables y mantenibles.',
+                            en: 'PMarketplace gives independent creators a place to sell PocketMine plugins while helping server owners buy trusted releases.',
+                            fr: 'PMarketplace aide les propriétaires de serveurs Minecraft Bedrock à trouver des plugins PocketMine-MP sûrs, fiables et maintenables.',
+                            es: 'PMarketplace ayuda a dueños de servidores Minecraft Bedrock a encontrar plugins PocketMine-MP seguros, fiables y mantenibles.',
                             'pt-br':
-                                'A PMHub ajuda donos de servidores Minecraft Bedrock a encontrar plugins PocketMine-MP seguros, confiáveis e fáceis de manter.',
-                            de: 'PMHub hilft Minecraft-Bedrock-Serverbetreibern, sichere, zuverlässige und wartbare PocketMine-MP-Plugins zu finden.'
+                                'A PMarketplace ajuda donos de servidores Minecraft Bedrock a encontrar plugins PocketMine-MP seguros, confiáveis e fáceis de manter.',
+                            de: 'PMarketplace hilft Minecraft-Bedrock-Serverbetreibern, sichere, zuverlässige und wartbare PocketMine-MP-Plugins zu finden.'
                         })}
                     </p>
                 </div>
@@ -88,7 +89,7 @@ export default async function AboutPage() {
                         </h2>
                         <p>
                             {pickLocaleText(locale, {
-                                en: 'Help the PocketMine community access both free and premium plugins that keep Bedrock servers stable and communities growing.',
+                                en: 'Give creators a fair place to publish and sell plugins, while helping buyers discover reliable options quickly.',
                                 fr: 'Aider la communauté PocketMine à accéder à des plugins gratuits et premium qui rendent les serveurs Bedrock stables et les communautés plus solides.',
                                 es: 'Ayudar a la comunidad PocketMine a acceder a plugins gratis y premium que mantengan servidores Bedrock estables y comunidades en crecimiento.',
                                 'pt-br':
@@ -109,7 +110,7 @@ export default async function AboutPage() {
                         </h2>
                         <p>
                             {pickLocaleText(locale, {
-                                en: 'Security, long-term reliability, and plugin quality that supports real-world PocketMine-MP operations.',
+                                en: 'Transparent listings, secure payments, and plugin quality that supports real-world PocketMine-MP operations.',
                                 fr: 'La sécurité, la fiabilité long terme et une qualité de plugin adaptée aux vraies opérations PocketMine-MP.',
                                 es: 'Seguridad, fiabilidad a largo plazo y calidad de plugin para operaciones reales en PocketMine-MP.',
                                 'pt-br':

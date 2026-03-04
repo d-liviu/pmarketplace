@@ -7,7 +7,7 @@ function escapePdfText(text) {
 
 function generateReceiptPdf(order) {
   const lines = [
-    'PMHub Order Receipt',
+    'PMarketplace Order Receipt',
     `Order #${order.id}`,
     `Date: ${order.created_at}`,
     `Total: $${Number(order.total).toFixed(2)}`,

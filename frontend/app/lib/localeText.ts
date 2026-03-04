@@ -33,7 +33,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Authentication failed': 'Autenticazione fallita',
         'Network error, please try again': 'Errore di rete, riprova',
         'Try again': 'Riprova',
-        'Sign in | PMHub': 'Accedi | PMHub',
+        'Sign in | PMarketplace': 'Accedi | PMarketplace',
         'Sign in to manage your PocketMine plugin purchases.':
             'Accedi per gestire i tuoi acquisti di plugin PocketMine.',
         'Welcome back': 'Bentornato',
@@ -44,7 +44,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Gestisci licenze, scarica aggiornamenti e tieni organizzati i plugin PocketMine.',
         'Account preview': 'Anteprima account',
         'Cart': 'Carrello',
-        'Cart | PMHub': 'Carrello | PMHub',
+        'Cart | PMarketplace': 'Carrello | PMarketplace',
         'Your cart': 'Il tuo carrello',
         'Your cart is empty.': 'Il tuo carrello è vuoto.',
         'Order summary': 'Riepilogo ordine',
@@ -52,7 +52,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Continue to checkout': 'Continua al checkout',
         'Keep shopping': 'Continua a comprare',
         'Checkout': 'Checkout',
-        'Checkout | PMHub': 'Checkout | PMHub',
+        'Checkout | PMarketplace': 'Checkout | PMarketplace',
         'Checkout form': 'Modulo checkout',
         'Secure checkout': 'Checkout sicuro',
         'Fast purchase, instant access.': 'Acquisto rapido, accesso immediato.',
@@ -74,15 +74,15 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Checkout preview': 'Anteprima checkout',
         'Access details are delivered instantly after payment.':
             "I dettagli di accesso vengono consegnati subito dopo il pagamento.",
-        'About PMHub | PocketMine Plugin Marketplace':
-            'Informazioni su PMHub | Marketplace plugin PocketMine',
+        'About PMarketplace | PocketMine Plugin Marketplace':
+            'Informazioni su PMarketplace | Marketplace plugin PocketMine',
         'About': 'Chi siamo',
         'Built for serious PocketMine servers.':
             'Progettato per server PocketMine professionali.',
         'Our mission': 'La nostra missione',
         'What we value': 'I nostri valori',
-        'Contact | PMHub': 'Contatto | PMHub',
-        'PMHub support': 'Supporto PMHub',
+        'Contact | PMarketplace': 'Contatto | PMarketplace',
+        'PMarketplace support': 'Supporto PMarketplace',
         'Contact form': 'Modulo di contatto',
         'Name': 'Nome',
         'Topic': 'Argomento',
@@ -101,11 +101,11 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Apply filters': 'Applica filtri',
         'Plugin catalog': 'Catalogo plugin',
         'All PocketMine plugins': 'Tutti i plugin PocketMine',
-        'PocketMine Plugins (Free & Premium) | PMHub':
-            'Plugin PocketMine (Gratis e Premium) | PMHub',
+        'PocketMine Plugins (Free & Premium) | PMarketplace':
+            'Plugin PocketMine (Gratis e Premium) | PMarketplace',
         'PocketMine Plugins Catalog': 'Catalogo plugin PocketMine',
-        'PocketMine Plugin Not Found | PMHub':
-            'Plugin PocketMine non trovato | PMHub',
+        'PocketMine Plugin Not Found | PMarketplace':
+            'Plugin PocketMine non trovato | PMarketplace',
         'Plugins': 'Plugin',
         'Add to cart': 'Aggiungi al carrello',
         'Added': 'Aggiunto',
@@ -146,7 +146,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'View plugin': 'Vedi plugin',
         'PocketMine release': 'Versione PocketMine',
         'Order confirmed': 'Ordine confermato',
-        'Order confirmed | PMHub': 'Ordine confermato | PMHub',
+        'Order confirmed | PMarketplace': 'Ordine confermato | PMarketplace',
         'Thanks for your purchase': "Grazie per l'acquisto",
         'Keep browsing': 'Continua a esplorare',
         'My account': 'Il mio account',
@@ -160,8 +160,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'View cart': 'Vedi carrello',
         'Browse plugins': 'Esplora plugin',
         'See benefits': 'Vedi vantaggi',
-        'Free & Premium PocketMine Plugins for Bedrock Servers | PMHub':
-            'Plugin PocketMine Gratis e Premium per server Bedrock | PMHub',
+        'Free & Premium PocketMine Plugins for Bedrock Servers | PMarketplace':
+            'Plugin PocketMine Gratis e Premium per server Bedrock | PMarketplace',
         'PocketMine Plugins for Minecraft Bedrock Servers':
             'Plugin PocketMine per server Minecraft Bedrock',
         'Get free and premium PocketMine plugins that just work.':
@@ -172,32 +172,32 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Featured PocketMine plugin': 'Plugin PocketMine in evidenza',
         'Top PocketMine plugins right now.':
             'I migliori plugin PocketMine del momento.',
-        'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers. PMHub helps server owners find high-quality plugins for economy, factions, moderation, performance, and gameplay.':
-            'Acquista plugin PocketMine-MP gratuiti e premium per server Minecraft Bedrock. PMHub aiuta i proprietari di server a trovare plugin di alta qualità per economia, fazioni, moderazione, performance e gameplay.',
+        'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers. PMarketplace helps server owners find high-quality plugins for economy, factions, moderation, performance, and gameplay.':
+            'Acquista plugin PocketMine-MP gratuiti e premium per server Minecraft Bedrock. PMarketplace aiuta i proprietari di server a trovare plugin di alta qualità per economia, fazioni, moderazione, performance e gameplay.',
         'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers.':
             'Acquista plugin PocketMine-MP gratuiti e premium per server Minecraft Bedrock.',
         'Browse free and premium PocketMine plugins for Minecraft Bedrock servers.':
             'Scopri plugin PocketMine gratuiti e premium per server Minecraft Bedrock.',
-        'Browse free and premium PocketMine plugins for Minecraft Bedrock servers on PMHub.':
-            'Scopri plugin PocketMine gratuiti e premium per server Minecraft Bedrock su PMHub.',
+        'Browse free and premium PocketMine plugins for Minecraft Bedrock servers on PMarketplace.':
+            'Scopri plugin PocketMine gratuiti e premium per server Minecraft Bedrock su PMarketplace.',
         'Do you offer free PocketMine plugins?':
             'Offrite plugin PocketMine gratuiti?',
-        'Yes. PMHub includes both free and premium PocketMine plugins for Minecraft Bedrock servers.':
-            'Sì. PMHub include sia plugin PocketMine gratuiti che premium per server Minecraft Bedrock.',
-        'Are PMHub plugins made for PocketMine-MP servers?':
-            'I plugin PMHub sono pensati per server PocketMine-MP?',
-        'Yes. PMHub focuses on PocketMine-MP plugins built for modern Minecraft Bedrock server communities.':
-            'Sì. PMHub si concentra su plugin PocketMine-MP progettati per community moderne di server Minecraft Bedrock.',
-        'Learn how PMHub helps the PocketMine community find free and premium plugins for Minecraft Bedrock servers.':
-            'Scopri come PMHub aiuta la community PocketMine a trovare plugin gratuiti e premium per server Minecraft Bedrock.',
-        'PMHub helps Minecraft Bedrock server owners find secure, reliable, and maintainable PocketMine-MP plugins.':
-            'PMHub aiuta i proprietari di server Minecraft Bedrock a trovare plugin PocketMine-MP sicuri, affidabili e facili da mantenere.',
+        'Yes. PMarketplace includes both free and premium PocketMine plugins for Minecraft Bedrock servers.':
+            'Sì. PMarketplace include sia plugin PocketMine gratuiti che premium per server Minecraft Bedrock.',
+        'Are PMarketplace plugins made for PocketMine-MP servers?':
+            'I plugin PMarketplace sono pensati per server PocketMine-MP?',
+        'Yes. PMarketplace focuses on PocketMine-MP plugins built for modern Minecraft Bedrock server communities.':
+            'Sì. PMarketplace si concentra su plugin PocketMine-MP progettati per community moderne di server Minecraft Bedrock.',
+        'Learn how PMarketplace helps the PocketMine community find free and premium plugins for Minecraft Bedrock servers.':
+            'Scopri come PMarketplace aiuta la community PocketMine a trovare plugin gratuiti e premium per server Minecraft Bedrock.',
+        'PMarketplace helps Minecraft Bedrock server owners find secure, reliable, and maintainable PocketMine-MP plugins.':
+            'PMarketplace aiuta i proprietari di server Minecraft Bedrock a trovare plugin PocketMine-MP sicuri, affidabili e facili da mantenere.',
         'Help the PocketMine community access both free and premium plugins that keep Bedrock servers stable and communities growing.':
             'Aiutare la community PocketMine ad accedere a plugin gratuiti e premium che mantengono stabili i server Bedrock e fanno crescere le community.',
         'Security, long-term reliability, and plugin quality that supports real-world PocketMine-MP operations.':
             'Sicurezza, affidabilità a lungo termine e qualità dei plugin per operazioni PocketMine-MP reali.',
-        'Contact PMHub for PocketMine-MP plugin questions, free and premium plugin recommendations, and Minecraft Bedrock server support.':
-            'Contatta PMHub per domande sui plugin PocketMine-MP, consigli su plugin gratuiti e premium e supporto per server Minecraft Bedrock.',
+        'Contact PMarketplace for PocketMine-MP plugin questions, free and premium plugin recommendations, and Minecraft Bedrock server support.':
+            'Contatta PMarketplace per domande sui plugin PocketMine-MP, consigli su plugin gratuiti e premium e supporto per server Minecraft Bedrock.',
         'Let’s build your next plugin.':
             'Costruiamo il tuo prossimo plugin.',
         'Short questions, fast answers, and a clear path to delivery for your PocketMine-MP Minecraft Bedrock server.':
@@ -232,8 +232,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Focus sulla community PocketMine',
         'PocketMine plugins made for Minecraft Bedrock servers.':
             'Plugin PocketMine pensati per server Minecraft Bedrock.',
-        'PMHub helps server owners compare free and premium PocketMine plugins, choose faster, and run more stable Bedrock communities.':
-            'PMHub aiuta i proprietari di server a confrontare plugin PocketMine gratuiti e premium, scegliere più in fretta e gestire community Bedrock più stabili.',
+        'PMarketplace helps server owners compare free and premium PocketMine plugins, choose faster, and run more stable Bedrock communities.':
+            'PMarketplace aiuta i proprietari di server a confrontare plugin PocketMine gratuiti e premium, scegliere più in fretta e gestire community Bedrock più stabili.',
         'Free PocketMine plugins':
             'Plugin PocketMine gratuiti',
         'Start with free plugins to launch your PocketMine-MP stack, test gameplay ideas, and improve your Minecraft Bedrock server baseline.':
@@ -246,14 +246,14 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Potenzia il tuo server PocketMine con i plugin giusti.',
         'Compare free and premium PocketMine plugins, check pricing instantly, and deploy to your Minecraft Bedrock server faster.':
             'Confronta plugin PocketMine gratuiti e premium, verifica i prezzi subito e distribuisci più velocemente sul tuo server Minecraft Bedrock.',
-        'Why PocketMine admins choose PMHub':
-            'Perché gli admin PocketMine scelgono PMHub',
+        'Why PocketMine admins choose PMarketplace':
+            'Perché gli admin PocketMine scelgono PMarketplace',
         'Built for real PocketMine-MP server operations.':
             'Costruito per operazioni reali su server PocketMine-MP.',
         'Everything is designed to help Minecraft Bedrock server owners compare free and premium plugins quickly and deploy with confidence.':
             'Tutto è progettato per aiutare i proprietari di server Minecraft Bedrock a confrontare plugin gratuiti e premium rapidamente e distribuire con fiducia.',
-        'PMHub is a focused marketplace for the PocketMine community. Discover secure, high-performance PocketMine-MP plugins for Minecraft Bedrock server networks of any size.':
-            'PMHub è un marketplace focalizzato sulla community PocketMine. Scopri plugin PocketMine-MP sicuri e ad alte prestazioni per reti di server Minecraft Bedrock di qualsiasi dimensione.',
+        'PMarketplace is a focused marketplace for the PocketMine community. Discover secure, high-performance PocketMine-MP plugins for Minecraft Bedrock server networks of any size.':
+            'PMarketplace è un marketplace focalizzato sulla community PocketMine. Scopri plugin PocketMine-MP sicuri e ad alte prestazioni per reti di server Minecraft Bedrock di qualsiasi dimensione.',
         'Handpicked PocketMine-MP releases for Minecraft Bedrock server stability, security, and growth.':
             'Release PocketMine-MP selezionate per stabilità, sicurezza e crescita del tuo server Minecraft Bedrock.',
         'Security first':
@@ -274,8 +274,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Logica ottimizzata che aiuta a mantenere tick time bassi su server Bedrock attivi.',
         'A PocketMine-MP plugin built for secure, reliable Minecraft Bedrock gameplay.':
             'Un plugin PocketMine-MP progettato per un gameplay Minecraft Bedrock sicuro e affidabile.',
-        'Account | PMHub':
-            'Account | PMHub',
+        'Account | PMarketplace':
+            'Account | PMarketplace',
         'Best for':
             'Ideale per',
         'Browse free and premium PocketMine plugins for Minecraft Bedrock servers. Filter by tag, PocketMine version, and budget to find the right plugin fast.':
@@ -332,7 +332,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Authentication failed': 'Authenticatie mislukt',
         'Network error, please try again': 'Netwerkfout, probeer opnieuw',
         'Try again': 'Probeer opnieuw',
-        'Sign in | PMHub': 'Inloggen | PMHub',
+        'Sign in | PMarketplace': 'Inloggen | PMarketplace',
         'Sign in to manage your PocketMine plugin purchases.':
             'Log in om je PocketMine plugin-aankopen te beheren.',
         'Welcome back': 'Welkom terug',
@@ -343,7 +343,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Beheer licenties, download updates en houd je PocketMine-plugins georganiseerd.',
         'Account preview': 'Accountvoorbeeld',
         'Cart': 'Winkelwagen',
-        'Cart | PMHub': 'Winkelwagen | PMHub',
+        'Cart | PMarketplace': 'Winkelwagen | PMarketplace',
         'Your cart': 'Jouw winkelwagen',
         'Your cart is empty.': 'Je winkelwagen is leeg.',
         'Order summary': 'Besteloverzicht',
@@ -351,7 +351,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Continue to checkout': 'Ga verder naar afrekenen',
         'Keep shopping': 'Verder winkelen',
         'Checkout': 'Afrekenen',
-        'Checkout | PMHub': 'Afrekenen | PMHub',
+        'Checkout | PMarketplace': 'Afrekenen | PMarketplace',
         'Checkout form': 'Afrekenformulier',
         'Secure checkout': 'Veilig afrekenen',
         'Fast purchase, instant access.': 'Snelle aankoop, direct toegang.',
@@ -373,14 +373,14 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Checkout preview': 'Afrekenvoorbeeld',
         'Access details are delivered instantly after payment.':
             'Toegangsgegevens worden direct na betaling geleverd.',
-        'About PMHub | PocketMine Plugin Marketplace':
-            'Over PMHub | PocketMine Plugin Marketplace',
+        'About PMarketplace | PocketMine Plugin Marketplace':
+            'Over PMarketplace | PocketMine Plugin Marketplace',
         'Built for serious PocketMine servers.':
             'Gemaakt voor serieuze PocketMine-servers.',
         'Our mission': 'Onze missie',
         'What we value': 'Wat wij belangrijk vinden',
-        'Contact | PMHub': 'Contact | PMHub',
-        'PMHub support': 'PMHub support',
+        'Contact | PMarketplace': 'Contact | PMarketplace',
+        'PMarketplace support': 'PMarketplace support',
         'Contact form': 'Contactformulier',
         'Name': 'Naam',
         'Topic': 'Onderwerp',
@@ -398,11 +398,11 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'All versions': 'Alle versies',
         'Apply filters': 'Filters toepassen',
         'All PocketMine plugins': 'Alle PocketMine-plugins',
-        'PocketMine Plugins (Free & Premium) | PMHub':
-            'PocketMine-plugins (Gratis & Premium) | PMHub',
+        'PocketMine Plugins (Free & Premium) | PMarketplace':
+            'PocketMine-plugins (Gratis & Premium) | PMarketplace',
         'PocketMine Plugins Catalog': 'PocketMine plugin-catalogus',
-        'PocketMine Plugin Not Found | PMHub':
-            'PocketMine-plugin niet gevonden | PMHub',
+        'PocketMine Plugin Not Found | PMarketplace':
+            'PocketMine-plugin niet gevonden | PMarketplace',
         'Plugins': 'Plugins',
         'Add to cart': 'Toevoegen aan winkelwagen',
         'Added': 'Toegevoegd',
@@ -443,7 +443,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'View plugin': 'Bekijk plugin',
         'PocketMine release': 'PocketMine-release',
         'Order confirmed': 'Bestelling bevestigd',
-        'Order confirmed | PMHub': 'Bestelling bevestigd | PMHub',
+        'Order confirmed | PMarketplace': 'Bestelling bevestigd | PMarketplace',
         'Thanks for your purchase': 'Bedankt voor je aankoop',
         'Keep browsing': 'Verder bladeren',
         'Unable to sign out': 'Uitloggen mislukt',
@@ -456,8 +456,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'View cart': 'Bekijk winkelwagen',
         'Browse plugins': 'Plugins bekijken',
         'See benefits': 'Bekijk voordelen',
-        'Free & Premium PocketMine Plugins for Bedrock Servers | PMHub':
-            'Gratis & Premium PocketMine-plugins voor Bedrock-servers | PMHub',
+        'Free & Premium PocketMine Plugins for Bedrock Servers | PMarketplace':
+            'Gratis & Premium PocketMine-plugins voor Bedrock-servers | PMarketplace',
         'PocketMine Plugins for Minecraft Bedrock Servers':
             'PocketMine-plugins voor Minecraft Bedrock-servers',
         'Get free and premium PocketMine plugins that just work.':
@@ -468,32 +468,32 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Featured PocketMine plugin': 'Uitgelichte PocketMine-plugin',
         'Top PocketMine plugins right now.':
             'Top PocketMine-plugins van dit moment.',
-        'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers. PMHub helps server owners find high-quality plugins for economy, factions, moderation, performance, and gameplay.':
-            'Koop gratis en premium PocketMine-MP-plugins voor Minecraft Bedrock-servers. PMHub helpt servereigenaren hoogwaardige plugins te vinden voor economie, factions, moderatie, performance en gameplay.',
+        'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers. PMarketplace helps server owners find high-quality plugins for economy, factions, moderation, performance, and gameplay.':
+            'Koop gratis en premium PocketMine-MP-plugins voor Minecraft Bedrock-servers. PMarketplace helpt servereigenaren hoogwaardige plugins te vinden voor economie, factions, moderatie, performance en gameplay.',
         'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers.':
             'Koop gratis en premium PocketMine-MP-plugins voor Minecraft Bedrock-servers.',
         'Browse free and premium PocketMine plugins for Minecraft Bedrock servers.':
             'Bekijk gratis en premium PocketMine-plugins voor Minecraft Bedrock-servers.',
-        'Browse free and premium PocketMine plugins for Minecraft Bedrock servers on PMHub.':
-            'Bekijk gratis en premium PocketMine-plugins voor Minecraft Bedrock-servers op PMHub.',
+        'Browse free and premium PocketMine plugins for Minecraft Bedrock servers on PMarketplace.':
+            'Bekijk gratis en premium PocketMine-plugins voor Minecraft Bedrock-servers op PMarketplace.',
         'Do you offer free PocketMine plugins?':
             'Bieden jullie gratis PocketMine-plugins aan?',
-        'Yes. PMHub includes both free and premium PocketMine plugins for Minecraft Bedrock servers.':
-            'Ja. PMHub bevat zowel gratis als premium PocketMine-plugins voor Minecraft Bedrock-servers.',
-        'Are PMHub plugins made for PocketMine-MP servers?':
-            'Zijn PMHub-plugins gemaakt voor PocketMine-MP-servers?',
-        'Yes. PMHub focuses on PocketMine-MP plugins built for modern Minecraft Bedrock server communities.':
-            'Ja. PMHub richt zich op PocketMine-MP-plugins voor moderne Minecraft Bedrock-communityservers.',
-        'Learn how PMHub helps the PocketMine community find free and premium plugins for Minecraft Bedrock servers.':
-            'Ontdek hoe PMHub de PocketMine-community helpt gratis en premium plugins voor Minecraft Bedrock-servers te vinden.',
-        'PMHub helps Minecraft Bedrock server owners find secure, reliable, and maintainable PocketMine-MP plugins.':
-            'PMHub helpt Minecraft Bedrock-servereigenaren veilige, betrouwbare en onderhoudbare PocketMine-MP-plugins te vinden.',
+        'Yes. PMarketplace includes both free and premium PocketMine plugins for Minecraft Bedrock servers.':
+            'Ja. PMarketplace bevat zowel gratis als premium PocketMine-plugins voor Minecraft Bedrock-servers.',
+        'Are PMarketplace plugins made for PocketMine-MP servers?':
+            'Zijn PMarketplace-plugins gemaakt voor PocketMine-MP-servers?',
+        'Yes. PMarketplace focuses on PocketMine-MP plugins built for modern Minecraft Bedrock server communities.':
+            'Ja. PMarketplace richt zich op PocketMine-MP-plugins voor moderne Minecraft Bedrock-communityservers.',
+        'Learn how PMarketplace helps the PocketMine community find free and premium plugins for Minecraft Bedrock servers.':
+            'Ontdek hoe PMarketplace de PocketMine-community helpt gratis en premium plugins voor Minecraft Bedrock-servers te vinden.',
+        'PMarketplace helps Minecraft Bedrock server owners find secure, reliable, and maintainable PocketMine-MP plugins.':
+            'PMarketplace helpt Minecraft Bedrock-servereigenaren veilige, betrouwbare en onderhoudbare PocketMine-MP-plugins te vinden.',
         'Help the PocketMine community access both free and premium plugins that keep Bedrock servers stable and communities growing.':
             'Help de PocketMine-community met toegang tot gratis en premium plugins die Bedrock-servers stabiel houden en communities laten groeien.',
         'Security, long-term reliability, and plugin quality that supports real-world PocketMine-MP operations.':
             'Beveiliging, langetermijnbetrouwbaarheid en pluginkwaliteit voor echte PocketMine-MP-operaties.',
-        'Contact PMHub for PocketMine-MP plugin questions, free and premium plugin recommendations, and Minecraft Bedrock server support.':
-            'Neem contact op met PMHub voor vragen over PocketMine-MP-plugins, gratis en premium aanbevelingen en ondersteuning voor Minecraft Bedrock-servers.',
+        'Contact PMarketplace for PocketMine-MP plugin questions, free and premium plugin recommendations, and Minecraft Bedrock server support.':
+            'Neem contact op met PMarketplace voor vragen over PocketMine-MP-plugins, gratis en premium aanbevelingen en ondersteuning voor Minecraft Bedrock-servers.',
         'Let’s build your next plugin.':
             'Laten we je volgende plugin bouwen.',
         'Short questions, fast answers, and a clear path to delivery for your PocketMine-MP Minecraft Bedrock server.':
@@ -528,8 +528,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Focus op de PocketMine-community',
         'PocketMine plugins made for Minecraft Bedrock servers.':
             'PocketMine-plugins gemaakt voor Minecraft Bedrock-servers.',
-        'PMHub helps server owners compare free and premium PocketMine plugins, choose faster, and run more stable Bedrock communities.':
-            'PMHub helpt servereigenaren gratis en premium PocketMine-plugins te vergelijken, sneller te kiezen en stabielere Bedrock-communities te runnen.',
+        'PMarketplace helps server owners compare free and premium PocketMine plugins, choose faster, and run more stable Bedrock communities.':
+            'PMarketplace helpt servereigenaren gratis en premium PocketMine-plugins te vergelijken, sneller te kiezen en stabielere Bedrock-communities te runnen.',
         'Free PocketMine plugins':
             'Gratis PocketMine-plugins',
         'Start with free plugins to launch your PocketMine-MP stack, test gameplay ideas, and improve your Minecraft Bedrock server baseline.':
@@ -542,14 +542,14 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Upgrade je PocketMine-server met de juiste plugins.',
         'Compare free and premium PocketMine plugins, check pricing instantly, and deploy to your Minecraft Bedrock server faster.':
             'Vergelijk gratis en premium PocketMine-plugins, bekijk prijzen direct en deploy sneller naar je Minecraft Bedrock-server.',
-        'Why PocketMine admins choose PMHub':
-            'Waarom PocketMine-admins PMHub kiezen',
+        'Why PocketMine admins choose PMarketplace':
+            'Waarom PocketMine-admins PMarketplace kiezen',
         'Built for real PocketMine-MP server operations.':
             'Gebouwd voor echte PocketMine-MP-serveroperaties.',
         'Everything is designed to help Minecraft Bedrock server owners compare free and premium plugins quickly and deploy with confidence.':
             'Alles is ontworpen om Minecraft Bedrock-servereigenaren te helpen gratis en premium plugins snel te vergelijken en met vertrouwen te deployen.',
-        'PMHub is a focused marketplace for the PocketMine community. Discover secure, high-performance PocketMine-MP plugins for Minecraft Bedrock server networks of any size.':
-            'PMHub is een gerichte marketplace voor de PocketMine-community. Ontdek veilige, high-performance PocketMine-MP-plugins voor Minecraft Bedrock-servernetwerken van elke omvang.',
+        'PMarketplace is a focused marketplace for the PocketMine community. Discover secure, high-performance PocketMine-MP plugins for Minecraft Bedrock server networks of any size.':
+            'PMarketplace is een gerichte marketplace voor de PocketMine-community. Ontdek veilige, high-performance PocketMine-MP-plugins voor Minecraft Bedrock-servernetwerken van elke omvang.',
         'Handpicked PocketMine-MP releases for Minecraft Bedrock server stability, security, and growth.':
             'Geselecteerde PocketMine-MP-releases voor stabiliteit, beveiliging en groei van Minecraft Bedrock-servers.',
         'Security first':
@@ -570,8 +570,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Geoptimaliseerde logica die ticktijden laag houdt op actieve Bedrock-servers.',
         'A PocketMine-MP plugin built for secure, reliable Minecraft Bedrock gameplay.':
             'Een PocketMine-MP-plugin gemaakt voor veilige en betrouwbare Minecraft Bedrock-gameplay.',
-        'Account | PMHub':
-            'Account | PMHub',
+        'Account | PMarketplace':
+            'Account | PMarketplace',
         'Best for':
             'Beste voor',
         'Browse free and premium PocketMine plugins for Minecraft Bedrock servers. Filter by tag, PocketMine version, and budget to find the right plugin fast.':
@@ -628,7 +628,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Authentication failed': 'Logowanie nie powiodlo sie',
         'Network error, please try again': 'Blad sieci, sproboj ponownie',
         'Try again': 'Sproboj ponownie',
-        'Sign in | PMHub': 'Logowanie | PMHub',
+        'Sign in | PMarketplace': 'Logowanie | PMarketplace',
         'Sign in to manage your PocketMine plugin purchases.':
             'Zaloguj sie, aby zarzadzac zakupami pluginow PocketMine.',
         'Welcome back': 'Witaj ponownie',
@@ -639,7 +639,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Zarzadzaj licencjami, pobieraj aktualizacje i trzymaj pluginy PocketMine w porzadku.',
         'Account preview': 'Podglad konta',
         'Cart': 'Koszyk',
-        'Cart | PMHub': 'Koszyk | PMHub',
+        'Cart | PMarketplace': 'Koszyk | PMarketplace',
         'Your cart': 'Twoj koszyk',
         'Your cart is empty.': 'Twoj koszyk jest pusty.',
         'Order summary': 'Podsumowanie zamowienia',
@@ -647,7 +647,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Continue to checkout': 'Przejdz do platnosci',
         'Keep shopping': 'Kontynuuj zakupy',
         'Checkout': 'Platnosc',
-        'Checkout | PMHub': 'Platnosc | PMHub',
+        'Checkout | PMarketplace': 'Platnosc | PMarketplace',
         'Checkout form': 'Formularz platnosci',
         'Secure checkout': 'Bezpieczna platnosc',
         'Fast purchase, instant access.': 'Szybki zakup, natychmiastowy dostep.',
@@ -669,14 +669,14 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Checkout preview': 'Podglad platnosci',
         'Access details are delivered instantly after payment.':
             'Dane dostepowe sa dostarczane od razu po platnosci.',
-        'About PMHub | PocketMine Plugin Marketplace':
-            'O PMHub | Marketplace pluginow PocketMine',
+        'About PMarketplace | PocketMine Plugin Marketplace':
+            'O PMarketplace | Marketplace pluginow PocketMine',
         'Built for serious PocketMine servers.':
             'Stworzone dla powaznych serwerow PocketMine.',
         'Our mission': 'Nasza misja',
         'What we value': 'Co cenimy',
-        'Contact | PMHub': 'Kontakt | PMHub',
-        'PMHub support': 'Wsparcie PMHub',
+        'Contact | PMarketplace': 'Kontakt | PMarketplace',
+        'PMarketplace support': 'Wsparcie PMarketplace',
         'Contact form': 'Formularz kontaktowy',
         'Name': 'Imie',
         'Topic': 'Temat',
@@ -694,11 +694,11 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'All versions': 'Wszystkie wersje',
         'Apply filters': 'Zastosuj filtry',
         'All PocketMine plugins': 'Wszystkie pluginy PocketMine',
-        'PocketMine Plugins (Free & Premium) | PMHub':
-            'Pluginy PocketMine (Darmowe i Premium) | PMHub',
+        'PocketMine Plugins (Free & Premium) | PMarketplace':
+            'Pluginy PocketMine (Darmowe i Premium) | PMarketplace',
         'PocketMine Plugins Catalog': 'Katalog pluginow PocketMine',
-        'PocketMine Plugin Not Found | PMHub':
-            'Nie znaleziono pluginu PocketMine | PMHub',
+        'PocketMine Plugin Not Found | PMarketplace':
+            'Nie znaleziono pluginu PocketMine | PMarketplace',
         'Plugins': 'Pluginy',
         'Add to cart': 'Dodaj do koszyka',
         'Added': 'Dodano',
@@ -739,7 +739,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'View plugin': 'Zobacz plugin',
         'PocketMine release': 'Wersja PocketMine',
         'Order confirmed': 'Zamowienie potwierdzone',
-        'Order confirmed | PMHub': 'Zamowienie potwierdzone | PMHub',
+        'Order confirmed | PMarketplace': 'Zamowienie potwierdzone | PMarketplace',
         'Thanks for your purchase': 'Dziekujemy za zakup',
         'Keep browsing': 'Przegladaj dalej',
         'Unable to sign out': 'Nie mozna sie wylogowac',
@@ -752,8 +752,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'View cart': 'Zobacz koszyk',
         'Browse plugins': 'Przegladaj pluginy',
         'See benefits': 'Zobacz korzysci',
-        'Free & Premium PocketMine Plugins for Bedrock Servers | PMHub':
-            'Darmowe i Premium pluginy PocketMine dla serwerow Bedrock | PMHub',
+        'Free & Premium PocketMine Plugins for Bedrock Servers | PMarketplace':
+            'Darmowe i Premium pluginy PocketMine dla serwerow Bedrock | PMarketplace',
         'PocketMine Plugins for Minecraft Bedrock Servers':
             'Pluginy PocketMine dla serwerow Minecraft Bedrock',
         'Get free and premium PocketMine plugins that just work.':
@@ -764,32 +764,32 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Featured PocketMine plugin': 'Polecany plugin PocketMine',
         'Top PocketMine plugins right now.':
             'Najlepsze pluginy PocketMine teraz.',
-        'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers. PMHub helps server owners find high-quality plugins for economy, factions, moderation, performance, and gameplay.':
-            'Kupuj darmowe i premium pluginy PocketMine-MP dla serwerow Minecraft Bedrock. PMHub pomaga wlascicielom serwerow znalezc wysokiej jakosci pluginy do ekonomii, faction, moderacji, wydajnosci i gameplayu.',
+        'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers. PMarketplace helps server owners find high-quality plugins for economy, factions, moderation, performance, and gameplay.':
+            'Kupuj darmowe i premium pluginy PocketMine-MP dla serwerow Minecraft Bedrock. PMarketplace pomaga wlascicielom serwerow znalezc wysokiej jakosci pluginy do ekonomii, faction, moderacji, wydajnosci i gameplayu.',
         'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers.':
             'Kupuj darmowe i premium pluginy PocketMine-MP dla serwerow Minecraft Bedrock.',
         'Browse free and premium PocketMine plugins for Minecraft Bedrock servers.':
             'Przegladaj darmowe i premium pluginy PocketMine dla serwerow Minecraft Bedrock.',
-        'Browse free and premium PocketMine plugins for Minecraft Bedrock servers on PMHub.':
-            'Przegladaj darmowe i premium pluginy PocketMine dla serwerow Minecraft Bedrock na PMHub.',
+        'Browse free and premium PocketMine plugins for Minecraft Bedrock servers on PMarketplace.':
+            'Przegladaj darmowe i premium pluginy PocketMine dla serwerow Minecraft Bedrock na PMarketplace.',
         'Do you offer free PocketMine plugins?':
             'Czy oferujecie darmowe pluginy PocketMine?',
-        'Yes. PMHub includes both free and premium PocketMine plugins for Minecraft Bedrock servers.':
-            'Tak. PMHub zawiera darmowe i premium pluginy PocketMine dla serwerow Minecraft Bedrock.',
-        'Are PMHub plugins made for PocketMine-MP servers?':
-            'Czy pluginy PMHub sa tworzone dla serwerow PocketMine-MP?',
-        'Yes. PMHub focuses on PocketMine-MP plugins built for modern Minecraft Bedrock server communities.':
-            'Tak. PMHub koncentruje sie na pluginach PocketMine-MP dla nowoczesnych spolecznosci serwerow Minecraft Bedrock.',
-        'Learn how PMHub helps the PocketMine community find free and premium plugins for Minecraft Bedrock servers.':
-            'Dowiedz sie, jak PMHub pomaga spolecznosci PocketMine znajdowac darmowe i premium pluginy dla serwerow Minecraft Bedrock.',
-        'PMHub helps Minecraft Bedrock server owners find secure, reliable, and maintainable PocketMine-MP plugins.':
-            'PMHub pomaga wlascicielom serwerow Minecraft Bedrock znalezc bezpieczne, niezawodne i latwe w utrzymaniu pluginy PocketMine-MP.',
+        'Yes. PMarketplace includes both free and premium PocketMine plugins for Minecraft Bedrock servers.':
+            'Tak. PMarketplace zawiera darmowe i premium pluginy PocketMine dla serwerow Minecraft Bedrock.',
+        'Are PMarketplace plugins made for PocketMine-MP servers?':
+            'Czy pluginy PMarketplace sa tworzone dla serwerow PocketMine-MP?',
+        'Yes. PMarketplace focuses on PocketMine-MP plugins built for modern Minecraft Bedrock server communities.':
+            'Tak. PMarketplace koncentruje sie na pluginach PocketMine-MP dla nowoczesnych spolecznosci serwerow Minecraft Bedrock.',
+        'Learn how PMarketplace helps the PocketMine community find free and premium plugins for Minecraft Bedrock servers.':
+            'Dowiedz sie, jak PMarketplace pomaga spolecznosci PocketMine znajdowac darmowe i premium pluginy dla serwerow Minecraft Bedrock.',
+        'PMarketplace helps Minecraft Bedrock server owners find secure, reliable, and maintainable PocketMine-MP plugins.':
+            'PMarketplace pomaga wlascicielom serwerow Minecraft Bedrock znalezc bezpieczne, niezawodne i latwe w utrzymaniu pluginy PocketMine-MP.',
         'Help the PocketMine community access both free and premium plugins that keep Bedrock servers stable and communities growing.':
             'Pomoc spolecznosci PocketMine w dostepie do darmowych i premium pluginow, ktore utrzymuja serwery Bedrock stabilne i wspieraja rozwoj spolecznosci.',
         'Security, long-term reliability, and plugin quality that supports real-world PocketMine-MP operations.':
             'Bezpieczenstwo, dlugoterminowa niezawodnosc i jakosc pluginow wspierajaca realne operacje PocketMine-MP.',
-        'Contact PMHub for PocketMine-MP plugin questions, free and premium plugin recommendations, and Minecraft Bedrock server support.':
-            'Skontaktuj sie z PMHub w sprawie pluginow PocketMine-MP, rekomendacji darmowych i premium pluginow oraz wsparcia serwerow Minecraft Bedrock.',
+        'Contact PMarketplace for PocketMine-MP plugin questions, free and premium plugin recommendations, and Minecraft Bedrock server support.':
+            'Skontaktuj sie z PMarketplace w sprawie pluginow PocketMine-MP, rekomendacji darmowych i premium pluginow oraz wsparcia serwerow Minecraft Bedrock.',
         'Let’s build your next plugin.':
             'Zbudujmy Twoj kolejny plugin.',
         'Short questions, fast answers, and a clear path to delivery for your PocketMine-MP Minecraft Bedrock server.':
@@ -824,8 +824,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Skupienie na spolecznosci PocketMine',
         'PocketMine plugins made for Minecraft Bedrock servers.':
             'Pluginy PocketMine stworzone dla serwerow Minecraft Bedrock.',
-        'PMHub helps server owners compare free and premium PocketMine plugins, choose faster, and run more stable Bedrock communities.':
-            'PMHub pomaga wlascicielom serwerow porownywac darmowe i premium pluginy PocketMine, szybciej wybierac i prowadzic stabilniejsze spolecznosci Bedrock.',
+        'PMarketplace helps server owners compare free and premium PocketMine plugins, choose faster, and run more stable Bedrock communities.':
+            'PMarketplace pomaga wlascicielom serwerow porownywac darmowe i premium pluginy PocketMine, szybciej wybierac i prowadzic stabilniejsze spolecznosci Bedrock.',
         'Free PocketMine plugins':
             'Darmowe pluginy PocketMine',
         'Start with free plugins to launch your PocketMine-MP stack, test gameplay ideas, and improve your Minecraft Bedrock server baseline.':
@@ -838,14 +838,14 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Rozwin swoj serwer PocketMine z odpowiednimi pluginami.',
         'Compare free and premium PocketMine plugins, check pricing instantly, and deploy to your Minecraft Bedrock server faster.':
             'Porownuj darmowe i premium pluginy PocketMine, sprawdzaj ceny od razu i wdrazaj szybciej na serwer Minecraft Bedrock.',
-        'Why PocketMine admins choose PMHub':
-            'Dlaczego administratorzy PocketMine wybieraja PMHub',
+        'Why PocketMine admins choose PMarketplace':
+            'Dlaczego administratorzy PocketMine wybieraja PMarketplace',
         'Built for real PocketMine-MP server operations.':
             'Zbudowane dla realnych operacji serwerow PocketMine-MP.',
         'Everything is designed to help Minecraft Bedrock server owners compare free and premium plugins quickly and deploy with confidence.':
             'Wszystko jest zaprojektowane, aby pomoc wlascicielom serwerow Minecraft Bedrock szybko porownywac darmowe i premium pluginy oraz wdrazac je z pewnoscia.',
-        'PMHub is a focused marketplace for the PocketMine community. Discover secure, high-performance PocketMine-MP plugins for Minecraft Bedrock server networks of any size.':
-            'PMHub to wyspecjalizowany marketplace dla spolecznosci PocketMine. Odkrywaj bezpieczne, wydajne pluginy PocketMine-MP dla sieci serwerow Minecraft Bedrock kazdej wielkosci.',
+        'PMarketplace is a focused marketplace for the PocketMine community. Discover secure, high-performance PocketMine-MP plugins for Minecraft Bedrock server networks of any size.':
+            'PMarketplace to wyspecjalizowany marketplace dla spolecznosci PocketMine. Odkrywaj bezpieczne, wydajne pluginy PocketMine-MP dla sieci serwerow Minecraft Bedrock kazdej wielkosci.',
         'Handpicked PocketMine-MP releases for Minecraft Bedrock server stability, security, and growth.':
             'Wybrane wydania PocketMine-MP dla stabilnosci, bezpieczenstwa i rozwoju serwera Minecraft Bedrock.',
         'Security first':
@@ -866,8 +866,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Zoptymalizowana logika pomagajaca utrzymac niski tick time na aktywnych serwerach Bedrock.',
         'A PocketMine-MP plugin built for secure, reliable Minecraft Bedrock gameplay.':
             'Plugin PocketMine-MP stworzony dla bezpiecznego i niezawodnego gameplayu Minecraft Bedrock.',
-        'Account | PMHub':
-            'Konto | PMHub',
+        'Account | PMarketplace':
+            'Konto | PMarketplace',
         'Best for':
             'Najlepsze dla',
         'Browse free and premium PocketMine plugins for Minecraft Bedrock servers. Filter by tag, PocketMine version, and budget to find the right plugin fast.':
@@ -924,7 +924,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Authentication failed': 'Ошибка авторизации',
         'Network error, please try again': 'Ошибка сети, попробуйте снова',
         'Try again': 'Попробовать снова',
-        'Sign in | PMHub': 'Вход | PMHub',
+        'Sign in | PMarketplace': 'Вход | PMarketplace',
         'Sign in to manage your PocketMine plugin purchases.':
             'Войдите, чтобы управлять покупками плагинов PocketMine.',
         'Welcome back': 'С возвращением',
@@ -935,7 +935,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Управляйте лицензиями, загружайте обновления и держите плагины PocketMine в порядке.',
         'Account preview': 'Предпросмотр аккаунта',
         'Cart': 'Корзина',
-        'Cart | PMHub': 'Корзина | PMHub',
+        'Cart | PMarketplace': 'Корзина | PMarketplace',
         'Your cart': 'Ваша корзина',
         'Your cart is empty.': 'Ваша корзина пуста.',
         'Order summary': 'Сводка заказа',
@@ -943,7 +943,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Continue to checkout': 'Перейти к оплате',
         'Keep shopping': 'Продолжить покупки',
         'Checkout': 'Оплата',
-        'Checkout | PMHub': 'Оплата | PMHub',
+        'Checkout | PMarketplace': 'Оплата | PMarketplace',
         'Checkout form': 'Форма оплаты',
         'Secure checkout': 'Безопасная оплата',
         'Fast purchase, instant access.': 'Быстрая покупка, мгновенный доступ.',
@@ -965,14 +965,14 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Checkout preview': 'Предпросмотр оплаты',
         'Access details are delivered instantly after payment.':
             'Данные доступа отправляются сразу после оплаты.',
-        'About PMHub | PocketMine Plugin Marketplace':
-            'О PMHub | Маркетплейс плагинов PocketMine',
+        'About PMarketplace | PocketMine Plugin Marketplace':
+            'О PMarketplace | Маркетплейс плагинов PocketMine',
         'Built for serious PocketMine servers.':
             'Создано для серьезных серверов PocketMine.',
         'Our mission': 'Наша миссия',
         'What we value': 'Что мы ценим',
-        'Contact | PMHub': 'Контакты | PMHub',
-        'PMHub support': 'Поддержка PMHub',
+        'Contact | PMarketplace': 'Контакты | PMarketplace',
+        'PMarketplace support': 'Поддержка PMarketplace',
         'Contact form': 'Форма связи',
         'Name': 'Имя',
         'Topic': 'Тема',
@@ -990,11 +990,11 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'All versions': 'Все версии',
         'Apply filters': 'Применить фильтры',
         'All PocketMine plugins': 'Все плагины PocketMine',
-        'PocketMine Plugins (Free & Premium) | PMHub':
-            'Плагины PocketMine (Бесплатные и Premium) | PMHub',
+        'PocketMine Plugins (Free & Premium) | PMarketplace':
+            'Плагины PocketMine (Бесплатные и Premium) | PMarketplace',
         'PocketMine Plugins Catalog': 'Каталог плагинов PocketMine',
-        'PocketMine Plugin Not Found | PMHub':
-            'Плагин PocketMine не найден | PMHub',
+        'PocketMine Plugin Not Found | PMarketplace':
+            'Плагин PocketMine не найден | PMarketplace',
         'Plugins': 'Плагины',
         'Add to cart': 'Добавить в корзину',
         'Added': 'Добавлено',
@@ -1035,7 +1035,7 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'View plugin': 'Открыть плагин',
         'PocketMine release': 'Версия PocketMine',
         'Order confirmed': 'Заказ подтвержден',
-        'Order confirmed | PMHub': 'Заказ подтвержден | PMHub',
+        'Order confirmed | PMarketplace': 'Заказ подтвержден | PMarketplace',
         'Thanks for your purchase': 'Спасибо за покупку',
         'Keep browsing': 'Продолжить просмотр',
         'Unable to sign out': 'Не удалось выйти',
@@ -1048,8 +1048,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'View cart': 'Открыть корзину',
         'Browse plugins': 'Просмотреть плагины',
         'See benefits': 'Посмотреть преимущества',
-        'Free & Premium PocketMine Plugins for Bedrock Servers | PMHub':
-            'Бесплатные и премиум плагины PocketMine для Bedrock-серверов | PMHub',
+        'Free & Premium PocketMine Plugins for Bedrock Servers | PMarketplace':
+            'Бесплатные и премиум плагины PocketMine для Bedrock-серверов | PMarketplace',
         'PocketMine Plugins for Minecraft Bedrock Servers':
             'Плагины PocketMine для серверов Minecraft Bedrock',
         'Get free and premium PocketMine plugins that just work.':
@@ -1060,32 +1060,32 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
         'Featured PocketMine plugin': 'Рекомендуемый плагин PocketMine',
         'Top PocketMine plugins right now.':
             'Лучшие плагины PocketMine прямо сейчас.',
-        'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers. PMHub helps server owners find high-quality plugins for economy, factions, moderation, performance, and gameplay.':
-            'Покупайте бесплатные и премиум плагины PocketMine-MP для серверов Minecraft Bedrock. PMHub помогает владельцам серверов находить качественные плагины для экономики, factions, модерации, производительности и геймплея.',
+        'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers. PMarketplace helps server owners find high-quality plugins for economy, factions, moderation, performance, and gameplay.':
+            'Покупайте бесплатные и премиум плагины PocketMine-MP для серверов Minecraft Bedrock. PMarketplace помогает владельцам серверов находить качественные плагины для экономики, factions, модерации, производительности и геймплея.',
         'Shop free and premium PocketMine-MP plugins for Minecraft Bedrock servers.':
             'Покупайте бесплатные и премиум плагины PocketMine-MP для серверов Minecraft Bedrock.',
         'Browse free and premium PocketMine plugins for Minecraft Bedrock servers.':
             'Просматривайте бесплатные и премиум плагины PocketMine для серверов Minecraft Bedrock.',
-        'Browse free and premium PocketMine plugins for Minecraft Bedrock servers on PMHub.':
-            'Просматривайте бесплатные и премиум плагины PocketMine для серверов Minecraft Bedrock на PMHub.',
+        'Browse free and premium PocketMine plugins for Minecraft Bedrock servers on PMarketplace.':
+            'Просматривайте бесплатные и премиум плагины PocketMine для серверов Minecraft Bedrock на PMarketplace.',
         'Do you offer free PocketMine plugins?':
             'Вы предлагаете бесплатные плагины PocketMine?',
-        'Yes. PMHub includes both free and premium PocketMine plugins for Minecraft Bedrock servers.':
-            'Да. PMHub включает бесплатные и премиум плагины PocketMine для серверов Minecraft Bedrock.',
-        'Are PMHub plugins made for PocketMine-MP servers?':
-            'Плагины PMHub сделаны для серверов PocketMine-MP?',
-        'Yes. PMHub focuses on PocketMine-MP plugins built for modern Minecraft Bedrock server communities.':
-            'Да. PMHub фокусируется на плагинах PocketMine-MP для современных сообществ серверов Minecraft Bedrock.',
-        'Learn how PMHub helps the PocketMine community find free and premium plugins for Minecraft Bedrock servers.':
-            'Узнайте, как PMHub помогает сообществу PocketMine находить бесплатные и премиум плагины для серверов Minecraft Bedrock.',
-        'PMHub helps Minecraft Bedrock server owners find secure, reliable, and maintainable PocketMine-MP plugins.':
-            'PMHub помогает владельцам серверов Minecraft Bedrock находить безопасные, надежные и удобные в поддержке плагины PocketMine-MP.',
+        'Yes. PMarketplace includes both free and premium PocketMine plugins for Minecraft Bedrock servers.':
+            'Да. PMarketplace включает бесплатные и премиум плагины PocketMine для серверов Minecraft Bedrock.',
+        'Are PMarketplace plugins made for PocketMine-MP servers?':
+            'Плагины PMarketplace сделаны для серверов PocketMine-MP?',
+        'Yes. PMarketplace focuses on PocketMine-MP plugins built for modern Minecraft Bedrock server communities.':
+            'Да. PMarketplace фокусируется на плагинах PocketMine-MP для современных сообществ серверов Minecraft Bedrock.',
+        'Learn how PMarketplace helps the PocketMine community find free and premium plugins for Minecraft Bedrock servers.':
+            'Узнайте, как PMarketplace помогает сообществу PocketMine находить бесплатные и премиум плагины для серверов Minecraft Bedrock.',
+        'PMarketplace helps Minecraft Bedrock server owners find secure, reliable, and maintainable PocketMine-MP plugins.':
+            'PMarketplace помогает владельцам серверов Minecraft Bedrock находить безопасные, надежные и удобные в поддержке плагины PocketMine-MP.',
         'Help the PocketMine community access both free and premium plugins that keep Bedrock servers stable and communities growing.':
             'Помогаем сообществу PocketMine получать доступ к бесплатным и премиум плагинам, которые делают Bedrock-серверы стабильнее и помогают сообществам расти.',
         'Security, long-term reliability, and plugin quality that supports real-world PocketMine-MP operations.':
             'Безопасность, долгосрочная надежность и качество плагинов для реальных задач PocketMine-MP.',
-        'Contact PMHub for PocketMine-MP plugin questions, free and premium plugin recommendations, and Minecraft Bedrock server support.':
-            'Свяжитесь с PMHub по вопросам плагинов PocketMine-MP, рекомендациям бесплатных и премиум плагинов и поддержке серверов Minecraft Bedrock.',
+        'Contact PMarketplace for PocketMine-MP plugin questions, free and premium plugin recommendations, and Minecraft Bedrock server support.':
+            'Свяжитесь с PMarketplace по вопросам плагинов PocketMine-MP, рекомендациям бесплатных и премиум плагинов и поддержке серверов Minecraft Bedrock.',
         'Let’s build your next plugin.':
             'Давайте сделаем ваш следующий плагин.',
         'Short questions, fast answers, and a clear path to delivery for your PocketMine-MP Minecraft Bedrock server.':
@@ -1120,8 +1120,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Фокус на сообществе PocketMine',
         'PocketMine plugins made for Minecraft Bedrock servers.':
             'Плагины PocketMine для серверов Minecraft Bedrock.',
-        'PMHub helps server owners compare free and premium PocketMine plugins, choose faster, and run more stable Bedrock communities.':
-            'PMHub помогает владельцам серверов сравнивать бесплатные и премиум плагины PocketMine, быстрее выбирать и развивать более стабильные сообщества Bedrock.',
+        'PMarketplace helps server owners compare free and premium PocketMine plugins, choose faster, and run more stable Bedrock communities.':
+            'PMarketplace помогает владельцам серверов сравнивать бесплатные и премиум плагины PocketMine, быстрее выбирать и развивать более стабильные сообщества Bedrock.',
         'Free PocketMine plugins':
             'Бесплатные плагины PocketMine',
         'Start with free plugins to launch your PocketMine-MP stack, test gameplay ideas, and improve your Minecraft Bedrock server baseline.':
@@ -1134,14 +1134,14 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Улучшите ваш сервер PocketMine с правильными плагинами.',
         'Compare free and premium PocketMine plugins, check pricing instantly, and deploy to your Minecraft Bedrock server faster.':
             'Сравнивайте бесплатные и премиум плагины PocketMine, мгновенно проверяйте цены и быстрее внедряйте на ваш сервер Minecraft Bedrock.',
-        'Why PocketMine admins choose PMHub':
-            'Почему админы PocketMine выбирают PMHub',
+        'Why PocketMine admins choose PMarketplace':
+            'Почему админы PocketMine выбирают PMarketplace',
         'Built for real PocketMine-MP server operations.':
             'Создано для реальной эксплуатации серверов PocketMine-MP.',
         'Everything is designed to help Minecraft Bedrock server owners compare free and premium plugins quickly and deploy with confidence.':
             'Все создано, чтобы помочь владельцам серверов Minecraft Bedrock быстро сравнивать бесплатные и премиум плагины и внедрять их с уверенностью.',
-        'PMHub is a focused marketplace for the PocketMine community. Discover secure, high-performance PocketMine-MP plugins for Minecraft Bedrock server networks of any size.':
-            'PMHub — специализированный маркетплейс для сообщества PocketMine. Откройте безопасные и производительные плагины PocketMine-MP для сетей серверов Minecraft Bedrock любого масштаба.',
+        'PMarketplace is a focused marketplace for the PocketMine community. Discover secure, high-performance PocketMine-MP plugins for Minecraft Bedrock server networks of any size.':
+            'PMarketplace — специализированный маркетплейс для сообщества PocketMine. Откройте безопасные и производительные плагины PocketMine-MP для сетей серверов Minecraft Bedrock любого масштаба.',
         'Handpicked PocketMine-MP releases for Minecraft Bedrock server stability, security, and growth.':
             'Подобранные релизы PocketMine-MP для стабильности, безопасности и роста серверов Minecraft Bedrock.',
         'Security first':
@@ -1162,8 +1162,8 @@ const EXACT_TRANSLATIONS: Record<AutoLocale, Record<string, string>> = {
             'Оптимизированная логика, помогающая держать низкий tick time на активных Bedrock-серверах.',
         'A PocketMine-MP plugin built for secure, reliable Minecraft Bedrock gameplay.':
             'Плагин PocketMine-MP для безопасного и надежного геймплея Minecraft Bedrock.',
-        'Account | PMHub':
-            'Аккаунт | PMHub',
+        'Account | PMarketplace':
+            'Аккаунт | PMarketplace',
         'Best for':
             'Лучше всего для',
         'Browse free and premium PocketMine plugins for Minecraft Bedrock servers. Filter by tag, PocketMine version, and budget to find the right plugin fast.':
@@ -1238,20 +1238,20 @@ function translateString(locale: AutoLocale, value: string): string {
         return exact
     }
 
-    const pluginTitleMatch = value.match(/^(.*) PocketMine Plugin \| PMHub$/)
+    const pluginTitleMatch = value.match(/^(.*) PocketMine Plugin \| PMarketplace$/)
     if (pluginTitleMatch) {
         const pluginName = pluginTitleMatch[1]
         if (locale === 'it') {
-            return `${pluginName} Plugin PocketMine | PMHub`
+            return `${pluginName} Plugin PocketMine | PMarketplace`
         }
         if (locale === 'nl') {
-            return `${pluginName} PocketMine-plugin | PMHub`
+            return `${pluginName} PocketMine-plugin | PMarketplace`
         }
         if (locale === 'pl') {
-            return `${pluginName} Plugin PocketMine | PMHub`
+            return `${pluginName} Plugin PocketMine | PMarketplace`
         }
         if (locale === 'ru') {
-            return `${pluginName} Плагин PocketMine | PMHub`
+            return `${pluginName} Плагин PocketMine | PMarketplace`
         }
     }
 

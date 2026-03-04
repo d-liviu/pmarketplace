@@ -12,7 +12,7 @@ export const SUPPORTED_LOCALES = [
 export type Locale = (typeof SUPPORTED_LOCALES)[number]
 
 export const DEFAULT_LOCALE: Locale = 'en'
-export const LOCALE_COOKIE = 'pmhub_locale'
+export const LOCALE_COOKIE = 'pmarketplace_locale'
 
 const HREF_LANG_BY_LOCALE: Record<Locale, string> = {
     en: 'en',

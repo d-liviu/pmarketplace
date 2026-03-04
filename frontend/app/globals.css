@@ -1,10 +1,10 @@
 :root {
-    --bg: #0b0f1a;
-    --bg-soft: #0f172a;
+    --bg: #11131a;
+    --bg-soft: #191d27;
     --text: #e5e7eb;
-    --muted: #a1a1aa;
-    --accent: #38b487;
-    --accent-strong: #6ee7b7;
+    --muted: #9ba6b8;
+    --accent: #ff7a1a;
+    --accent-strong: #ffb347;
     --border: rgba(255, 255, 255, 0.08);
     --card: rgba(16, 24, 38, 0.78);
     --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
@@ -31,12 +31,12 @@ body {
     color: var(--text);
     background: radial-gradient(
             900px 500px at 85% -10%,
-            rgba(56, 180, 135, 0.18),
+            rgba(255, 122, 26, 0.22),
             transparent 60%
         ),
         radial-gradient(
             800px 480px at -10% 15%,
-            rgba(59, 130, 246, 0.08),
+            rgba(14, 165, 233, 0.14),
             transparent 60%
         ),
         var(--bg);
@@ -139,6 +139,10 @@ button {
     font-weight: 700;
 }
 
+.logo-mark {
+    filter: hue-rotate(-148deg) saturate(1.45) brightness(1.08);
+}
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -155,7 +159,7 @@ button {
 .account-link {
     padding: 10px 18px;
     border-radius: 999px;
-    border: 1px solid rgba(56, 180, 135, 0.5);
+    border: 1px solid rgba(255, 122, 26, 0.5);
     color: var(--accent-strong);
     font-weight: 600;
 }
@@ -175,13 +179,13 @@ button {
     justify-content: center;
     gap: 8px;
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
-    color: #06130f;
+    color: #1a0d03;
     padding: 11px 22px;
     border-radius: 999px;
     font-size: 15px;
     line-height: 1.2;
     font-weight: 600;
-    box-shadow: 0 18px 32px rgba(56, 180, 135, 0.3);
+    box-shadow: 0 18px 32px rgba(255, 122, 26, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid transparent;
     cursor: pointer;
@@ -189,7 +193,7 @@ button {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 20px 38px rgba(56, 180, 135, 0.35);
+    box-shadow: 0 20px 38px rgba(255, 122, 26, 0.35);
 }
 
 .btn-secondary {
@@ -213,7 +217,7 @@ button {
 
 .btn-secondary:hover {
     transform: translateY(-2px);
-    border-color: rgba(56, 180, 135, 0.5);
+    border-color: rgba(255, 122, 26, 0.5);
 }
 
 .text-link {
@@ -230,7 +234,7 @@ button {
 .pill {
     padding: 6px 12px;
     border-radius: 999px;
-    background: rgba(56, 180, 135, 0.16);
+    background: rgba(255, 122, 26, 0.16);
     color: var(--accent-strong);
     font-size: 12px;
     letter-spacing: 0.08em;
@@ -254,12 +258,17 @@ button {
 .chip {
     padding: 6px 12px;
     border-radius: 999px;
-    background: rgba(56, 180, 135, 0.12);
-    border: 1px solid rgba(56, 180, 135, 0.28);
+    background: rgba(255, 122, 26, 0.12);
+    border: 1px solid rgba(255, 122, 26, 0.28);
     font-size: 12px;
     color: var(--accent-strong);
     text-transform: uppercase;
     letter-spacing: 0.08em;
+}
+
+.chip-link:hover {
+    background: rgba(255, 122, 26, 0.2);
+    border-color: rgba(255, 122, 26, 0.44);
 }
 
 .card {
@@ -433,25 +442,47 @@ button {
     overflow: hidden;
     padding: 150px 0 130px;
     background-image: linear-gradient(
-            120deg,
-            rgba(11, 15, 26, 0.96) 0%,
-            rgba(11, 15, 26, 0.8) 45%,
-            rgba(11, 15, 26, 0.65) 100%
+            132deg,
+            rgba(6, 9, 16, 0.82) 0%,
+            rgba(10, 16, 28, 0.72) 44%,
+            rgba(16, 28, 48, 0.58) 100%
         ),
-        url('/hero.jpeg');
+        linear-gradient(
+            120deg,
+            rgba(255, 122, 26, 0.22) 0%,
+            rgba(255, 122, 26, 0) 52%
+        ),
+        url('/images/marketplace-backdrop.jpg');
     background-size: cover;
     background-position: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        700px 420px at 76% 22%,
+        rgba(14, 165, 233, 0.18),
+        transparent 65%
+    );
+    pointer-events: none;
 }
 
 .hero::after {
     content: '';
     position: absolute;
-    width: 360px;
-    height: 360px;
-    right: -80px;
-    top: -80px;
-    background: url('/logo.png') center/contain no-repeat;
-    opacity: 0.08;
+    width: 440px;
+    height: 440px;
+    right: -120px;
+    top: -120px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 179, 71, 0.15) 0%,
+        rgba(255, 122, 26, 0.05) 48%,
+        transparent 78%
+    );
     pointer-events: none;
 }
 
@@ -462,8 +493,14 @@ button {
     align-items: center;
 }
 
+.hero-inner--browser {
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+}
+
 .hero-copy {
     animation: fade-up 0.7s ease both;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-copy h1 {
@@ -492,10 +529,33 @@ button {
     margin-top: 26px;
 }
 
+.hero-search-panel {
+    margin-top: 26px;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(8, 12, 21, 0.52);
+    backdrop-filter: blur(8px);
+}
+
+.hero-search-bar input {
+    min-height: 46px;
+}
+
+.hero-filter-row {
+    gap: 14px;
+}
+
+.hero-filter-row label {
+    min-width: 140px;
+}
+
 .hero-panel {
     display: grid;
     gap: 18px;
     animation: fade-up 0.7s ease 0.1s both;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-card {
@@ -524,6 +584,33 @@ button {
     justify-content: space-between;
     gap: 12px;
     margin-top: 8px;
+}
+
+.hero-browser-card {
+    min-height: 100%;
+}
+
+.hero-browse-list {
+    display: grid;
+    gap: 10px;
+}
+
+.hero-browse-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 15, 26, 0.55);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.hero-browse-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 122, 26, 0.5);
+    background: rgba(12, 18, 30, 0.72);
 }
 
 .price {
@@ -578,8 +665,8 @@ button {
     width: 40px;
     height: 40px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(56, 180, 135, 0.45), rgba(56, 180, 135, 0.08));
-    border: 1px solid rgba(56, 180, 135, 0.3);
+    background: linear-gradient(135deg, rgba(255, 122, 26, 0.45), rgba(255, 122, 26, 0.08));
+    border: 1px solid rgba(255, 122, 26, 0.3);
     margin-bottom: 14px;
 }
 
@@ -596,10 +683,22 @@ button {
     border-radius: var(--radius-md);
     background: rgba(12, 19, 32, 0.78);
     border: 1px solid var(--border);
+    display: grid;
+    gap: 14px;
 }
 
 .category-card h3 {
     font-size: 18px;
+    margin: 0;
+}
+
+.category-media {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 15, 26, 0.6);
 }
 
 /* ================= CTA ================= */
@@ -607,8 +706,8 @@ button {
 .cta {
     padding: 44px;
     border-radius: var(--radius-lg);
-    background: linear-gradient(120deg, rgba(56, 180, 135, 0.16), rgba(11, 15, 26, 0.95));
-    border: 1px solid rgba(56, 180, 135, 0.35);
+    background: linear-gradient(120deg, rgba(255, 122, 26, 0.16), rgba(11, 15, 26, 0.95));
+    border: 1px solid rgba(255, 122, 26, 0.35);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -662,7 +761,7 @@ button {
 
 .catalog-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(56, 180, 135, 0.4);
+    border-color: rgba(255, 122, 26, 0.4);
 }
 
 .catalog-meta {
@@ -682,8 +781,8 @@ button {
 .price-badge {
     padding: 6px 12px;
     border-radius: 999px;
-    background: rgba(56, 180, 135, 0.16);
-    border: 1px solid rgba(56, 180, 135, 0.3);
+    background: rgba(255, 122, 26, 0.16);
+    border: 1px solid rgba(255, 122, 26, 0.3);
     font-size: 12px;
     color: var(--accent-strong);
     font-weight: 600;
@@ -793,9 +892,9 @@ input:focus,
 textarea:focus,
 select:focus,
 .search-bar input:focus {
-    outline: 2px solid rgba(56, 180, 135, 0.45);
+    outline: 2px solid rgba(255, 122, 26, 0.45);
     outline-offset: 2px;
-    border-color: rgba(56, 180, 135, 0.5);
+    border-color: rgba(255, 122, 26, 0.5);
 }
 
 textarea {
@@ -1063,8 +1162,8 @@ textarea {
 .status-pill {
     padding: 4px 10px;
     border-radius: 999px;
-    background: rgba(56, 180, 135, 0.16);
-    border: 1px solid rgba(56, 180, 135, 0.3);
+    background: rgba(255, 122, 26, 0.16);
+    border: 1px solid rgba(255, 122, 26, 0.3);
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1176,8 +1275,8 @@ textarea {
     gap: 12px;
     padding: 12px 16px;
     border-radius: var(--radius-sm);
-    background: rgba(56, 180, 135, 0.12);
-    border: 1px solid rgba(56, 180, 135, 0.25);
+    background: rgba(255, 122, 26, 0.12);
+    border: 1px solid rgba(255, 122, 26, 0.25);
 }
 
 .owned-versions summary {
@@ -1310,8 +1409,8 @@ textarea {
     gap: 12px;
     padding: 12px 16px;
     border-radius: var(--radius-sm);
-    background: rgba(56, 180, 135, 0.12);
-    border: 1px solid rgba(56, 180, 135, 0.25);
+    background: rgba(255, 122, 26, 0.12);
+    border: 1px solid rgba(255, 122, 26, 0.25);
     font-weight: 600;
 }
 

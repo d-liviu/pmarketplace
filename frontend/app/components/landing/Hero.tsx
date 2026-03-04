@@ -1,307 +1,269 @@
 import Link from 'next/link'
-import MediaImage from '../plugins/MediaImage'
-import { getApiBaseUrl } from '../../lib/apiBase'
-import { resolveMediaUrl } from '../../lib/media'
-import { toSlug } from '../../lib/slug'
 import { type Locale, withLocalePath } from '../../lib/i18n'
 import { pickLocaleText } from '../../lib/localeText'
 
-type Plugin = {
-    id: string | number
-    name: string
-    slug?: string
-    short_description?: string
-    price?: number | string
-    is_free?: boolean
-    featured?: boolean | number
-    media?: { url: string }[]
-}
+const TAG_OPTIONS = ['economy', 'factions', 'utilities', 'moderation', 'minigames']
+const VERSION_OPTIONS = ['5.x', '4.x', '3.x']
 
-const apiBaseUrl = getApiBaseUrl()
-const fallbackImage = '/images/plugin-fallback.svg'
-
-async function getHeroPlugin() {
-    try {
-        const res = await fetch(`${apiBaseUrl}/plugins`, {
-            cache: 'no-store'
-        })
-
-        if (!res.ok) {
-            return null
-        }
-
-        const data = await res.json()
-        const plugins = Array.isArray(data) ? (data as Plugin[]) : []
-        if (!plugins.length) {
-            return null
-        }
-
-        return plugins.find((plugin) => Boolean(plugin.featured)) || plugins[0]
-    } catch (error) {
-        console.error('Failed to load hero plugin', error)
-        return null
-    }
-}
-
-function getPluginHref(plugin: Plugin) {
-    if (plugin.slug) {
-        return `/plugins/${plugin.slug}`
-    }
-
-    const fromName = plugin.name ? toSlug(plugin.name) : ''
-    return fromName ? `/plugins/${fromName}` : `/plugins/${plugin.id}`
-}
-
-function formatPrice(plugin: Plugin | null, locale: Locale) {
-    if (!plugin) {
-        return '$49'
-    }
-
-    if (plugin.is_free) {
-        return pickLocaleText(locale, {
-            en: 'Free',
-            fr: 'Gratuit',
-            es: 'Gratis',
-            'pt-br': 'Gratuito',
-            de: 'Kostenlos'
-        })
-    }
-
-    if (plugin.price !== undefined && plugin.price !== null) {
-        const numericPrice = Number(plugin.price)
-        if (!Number.isNaN(numericPrice)) {
-            return `$${numericPrice.toFixed(2)}`
-        }
-    }
-
-    return pickLocaleText(locale, {
-        en: 'Custom',
-        fr: 'Sur mesure',
-        es: 'Personalizado',
-        'pt-br': 'Personalizado',
-        de: 'Individuell'
-    })
-}
-
-export default async function Hero({ locale = 'en' }: { locale?: Locale }) {
-    const heroPlugin = await getHeroPlugin()
-    const heroTitle =
-        heroPlugin?.name ||
-        pickLocaleText(locale, {
-            en: 'Security Essentials Pack',
-            fr: 'Pack Essentiel Sécurité',
-            es: 'Paquete Esencial de Seguridad',
-            'pt-br': 'Pacote Essencial de Segurança',
-            de: 'Security Essentials Paket'
-        })
-    const heroDescription =
-        heroPlugin?.short_description ||
-        pickLocaleText(locale, {
-            en: 'Hardened permissions, safe configs, and logs.',
-            fr: 'Permissions renforcées, configs sûres et journaux.',
-            es: 'Permisos reforzados, configuraciones seguras y registros.',
-            'pt-br': 'Permissões reforçadas, configs seguras e logs.',
-            de: 'Abgesicherte Berechtigungen, sichere Konfigurationen und Logs.'
-        })
-    const heroPrice = formatPrice(heroPlugin, locale)
-    const heroHref = heroPlugin ? getPluginHref(heroPlugin) : '/plugins'
-    const heroImage = resolveMediaUrl(heroPlugin?.media?.[0]?.url) || fallbackImage
-    const highlightChips = pickLocaleText(locale, {
-        en: ['Free & premium plugins', 'PocketMine-MP ready', 'Built for Bedrock servers'],
+export default function Hero({ locale = 'en' }: { locale?: Locale }) {
+    const quickLinks = pickLocaleText(locale, {
+        en: [
+            { label: 'Economy', href: '/plugins?tag=economy' },
+            { label: 'Factions', href: '/plugins?tag=factions' },
+            { label: 'Utilities', href: '/plugins?tag=utilities' },
+            { label: 'Moderation', href: '/plugins?tag=moderation' }
+        ],
         fr: [
-            'Plugins gratuits et premium',
-            'Compatible PocketMine-MP',
-            'Optimisé serveurs Bedrock'
+            { label: 'Économie', href: '/plugins?tag=economy' },
+            { label: 'Factions', href: '/plugins?tag=factions' },
+            { label: 'Utilitaires', href: '/plugins?tag=utilities' },
+            { label: 'Modération', href: '/plugins?tag=moderation' }
         ],
         es: [
-            'Plugins gratis y premium',
-            'Compatible con PocketMine-MP',
-            'Optimizado para servidores Bedrock'
+            { label: 'Economía', href: '/plugins?tag=economy' },
+            { label: 'Facciones', href: '/plugins?tag=factions' },
+            { label: 'Utilidades', href: '/plugins?tag=utilities' },
+            { label: 'Moderación', href: '/plugins?tag=moderation' }
         ],
         'pt-br': [
-            'Plugins gratuitos e premium',
-            'Compatível com PocketMine-MP',
-            'Otimizado para servidores Bedrock'
+            { label: 'Economia', href: '/plugins?tag=economy' },
+            { label: 'Facções', href: '/plugins?tag=factions' },
+            { label: 'Utilitários', href: '/plugins?tag=utilities' },
+            { label: 'Moderação', href: '/plugins?tag=moderation' }
         ],
         de: [
-            'Kostenlose und Premium-Plugins',
-            'PocketMine-MP kompatibel',
-            'Für Bedrock-Server optimiert'
+            { label: 'Wirtschaft', href: '/plugins?tag=economy' },
+            { label: 'Fraktionen', href: '/plugins?tag=factions' },
+            { label: 'Utilities', href: '/plugins?tag=utilities' },
+            { label: 'Moderation', href: '/plugins?tag=moderation' }
         ]
     })
-    const quickStats = pickLocaleText(locale, {
+    const searchTitle = pickLocaleText(locale, {
+        en: 'Search and browse plugins built by other creators.',
+        fr: 'Recherchez et parcourez des plugins créés par la communauté.',
+        es: 'Busca y explora plugins creados por la comunidad.',
+        'pt-br': 'Busque e explore plugins criados pela comunidade.',
+        de: 'Suche und entdecke Plugins, die von der Community erstellt wurden.'
+    })
+    const searchDescription = pickLocaleText(locale, {
+        en: 'Use filters for tags, pricing, and PocketMine versions to find the right plugin fast.',
+        fr: 'Utilisez les filtres par tags, prix et versions PocketMine pour trouver rapidement le bon plugin.',
+        es: 'Usa filtros por etiquetas, precio y versión de PocketMine para encontrar el plugin ideal rápidamente.',
+        'pt-br':
+            'Use filtros por tags, preço e versão do PocketMine para encontrar o plugin certo rapidamente.',
+        de: 'Nutze Filter für Tags, Preis und PocketMine-Versionen, um schnell das richtige Plugin zu finden.'
+    })
+    const priceOptions = pickLocaleText(locale, {
         en: [
-            {
-                title: 'For server owners',
-                detail: 'Find plugins for economy, factions, moderation, and core gameplay.'
-            },
-            {
-                title: 'For communities',
-                detail: 'Launch reliable Minecraft Bedrock server experiences with less friction.'
-            }
+            { label: 'All prices', value: '' },
+            { label: 'Free', value: 'free' },
+            { label: 'Under $20', value: 'under-20' },
+            { label: 'Under $50', value: 'under-50' },
+            { label: '$50+', value: '50-plus' }
         ],
         fr: [
-            {
-                title: 'Pour les propriétaires',
-                detail: 'Trouvez des plugins économie, factions, modération et gameplay.'
-            },
-            {
-                title: 'Pour les communautés',
-                detail: 'Lancez des serveurs Minecraft Bedrock stables plus rapidement.'
-            }
+            { label: 'Tous les prix', value: '' },
+            { label: 'Gratuit', value: 'free' },
+            { label: 'Moins de 20 $', value: 'under-20' },
+            { label: 'Moins de 50 $', value: 'under-50' },
+            { label: '50 $+', value: '50-plus' }
         ],
         es: [
-            {
-                title: 'Para dueños de servidores',
-                detail: 'Encuentra plugins de economía, facciones, moderación y jugabilidad.'
-            },
-            {
-                title: 'Para comunidades',
-                detail: 'Lanza experiencias Bedrock estables con menos fricción.'
-            }
+            { label: 'Todos los precios', value: '' },
+            { label: 'Gratis', value: 'free' },
+            { label: 'Menos de $20', value: 'under-20' },
+            { label: 'Menos de $50', value: 'under-50' },
+            { label: '$50+', value: '50-plus' }
         ],
         'pt-br': [
-            {
-                title: 'Para donos de servidores',
-                detail: 'Encontre plugins de economia, facções, moderação e gameplay.'
-            },
-            {
-                title: 'Para comunidades',
-                detail: 'Lance servidores Bedrock estáveis com menos atrito.'
-            }
+            { label: 'Todos os preços', value: '' },
+            { label: 'Gratuito', value: 'free' },
+            { label: 'Abaixo de $20', value: 'under-20' },
+            { label: 'Abaixo de $50', value: 'under-50' },
+            { label: '$50+', value: '50-plus' }
         ],
         de: [
-            {
-                title: 'Für Serverbetreiber',
-                detail: 'Finde Plugins für Wirtschaft, Fraktionen, Moderation und Gameplay.'
-            },
-            {
-                title: 'Für Communities',
-                detail: 'Starte stabile Bedrock-Server-Erlebnisse mit weniger Aufwand.'
-            }
+            { label: 'Alle Preise', value: '' },
+            { label: 'Kostenlos', value: 'free' },
+            { label: 'Unter $20', value: 'under-20' },
+            { label: 'Unter $50', value: 'under-50' },
+            { label: '$50+', value: '50-plus' }
         ]
     })
 
     return (
         <section className="hero">
-            <div className="container hero-inner">
+            <div className="container hero-inner hero-inner--browser">
                 <div className="hero-copy">
                     <span className="hero-badge">
                         {pickLocaleText(locale, {
-                            en: 'PocketMine Plugins for Minecraft Bedrock Servers',
-                            fr: 'Plugins PocketMine pour serveurs Minecraft Bedrock',
-                            es: 'Plugins PocketMine para servidores Minecraft Bedrock',
-                            'pt-br':
-                                'Plugins PocketMine para servidores Minecraft Bedrock',
-                            de: 'PocketMine-Plugins für Minecraft-Bedrock-Server'
+                            en: 'Community Marketplace',
+                            fr: 'Marketplace communautaire',
+                            es: 'Marketplace de la comunidad',
+                            'pt-br': 'Marketplace da comunidade',
+                            de: 'Community-Marktplatz'
                         })}
                     </span>
-                    <h1>
-                        {pickLocaleText(locale, {
-                            en: 'Get free and premium PocketMine plugins that just work.',
-                            fr: 'Obtenez des plugins PocketMine gratuits et premium qui fonctionnent vraiment.',
-                            es: 'Consigue plugins PocketMine gratis y premium que realmente funcionan.',
-                            'pt-br':
-                                'Obtenha plugins PocketMine gratuitos e premium que realmente funcionam.',
-                            de: 'Hol dir kostenlose und Premium-PocketMine-Plugins, die wirklich funktionieren.'
-                        })}
-                    </h1>
-                    <p>
-                        {pickLocaleText(locale, {
-                            en: 'PMHub is a focused marketplace for the PocketMine community. Discover secure, high-performance PocketMine-MP plugins for Minecraft Bedrock server networks of any size.',
-                            fr: 'PMHub est une marketplace dédiée à la communauté PocketMine. Découvrez des plugins PocketMine-MP sécurisés et performants pour des serveurs Minecraft Bedrock de toute taille.',
-                            es: 'PMHub es un marketplace centrado en la comunidad PocketMine. Descubre plugins PocketMine-MP seguros y de alto rendimiento para redes de servidores Minecraft Bedrock.',
-                            'pt-br':
-                                'PMHub é um marketplace focado na comunidade PocketMine. Descubra plugins PocketMine-MP seguros e de alto desempenho para redes Minecraft Bedrock de qualquer tamanho.',
-                            de: 'PMHub ist ein fokussierter Marktplatz für die PocketMine-Community. Entdecke sichere und leistungsstarke PocketMine-MP-Plugins für Minecraft-Bedrock-Server jeder Größe.'
-                        })}
-                    </p>
-                    <div className="hero-actions">
-                        <Link
-                            href={withLocalePath('/plugins', locale)}
-                            className="btn-primary"
-                        >
-                            {pickLocaleText(locale, {
-                                en: 'Browse plugins',
-                                fr: 'Voir les plugins',
-                                es: 'Explorar plugins',
-                                'pt-br': 'Explorar plugins',
-                                de: 'Plugins durchsuchen'
-                            })}
-                        </Link>
-                        <a href="#features" className="btn-secondary">
-                            {pickLocaleText(locale, {
-                                en: 'See benefits',
-                                fr: 'Voir les avantages',
-                                es: 'Ver ventajas',
-                                'pt-br': 'Ver benefícios',
-                                de: 'Vorteile ansehen'
-                            })}
-                        </a>
-                    </div>
+                    <h1>{searchTitle}</h1>
+                    <p>{searchDescription}</p>
+
+                    <form
+                        className="search-panel hero-search-panel"
+                        action={withLocalePath('/plugins', locale)}
+                        method="GET"
+                    >
+                        <div className="search-bar hero-search-bar">
+                            <input
+                                type="search"
+                                name="search"
+                                placeholder={pickLocaleText(locale, {
+                                    en: 'Search plugins, tags, or creator names',
+                                    fr: 'Rechercher des plugins, tags, ou noms de créateurs',
+                                    es: 'Buscar plugins, etiquetas o nombres de creadores',
+                                    'pt-br':
+                                        'Buscar plugins, tags ou nomes de criadores',
+                                    de: 'Plugins, Tags oder Creator-Namen suchen'
+                                })}
+                            />
+                            <button className="btn-primary" type="submit">
+                                {pickLocaleText(locale, {
+                                    en: 'Search Marketplace',
+                                    fr: 'Rechercher',
+                                    es: 'Buscar',
+                                    'pt-br': 'Buscar',
+                                    de: 'Suchen'
+                                })}
+                            </button>
+                        </div>
+                        <div className="filter-row hero-filter-row">
+                            <label>
+                                {pickLocaleText(locale, {
+                                    en: 'Tag',
+                                    fr: 'Tag',
+                                    es: 'Etiqueta',
+                                    'pt-br': 'Tag',
+                                    de: 'Tag'
+                                })}
+                                <select name="tag" defaultValue="">
+                                    <option value="">
+                                        {pickLocaleText(locale, {
+                                            en: 'All tags',
+                                            fr: 'Tous les tags',
+                                            es: 'Todas las etiquetas',
+                                            'pt-br': 'Todas as tags',
+                                            de: 'Alle Tags'
+                                        })}
+                                    </option>
+                                    {TAG_OPTIONS.map((tag) => (
+                                        <option key={tag} value={tag}>
+                                            {tag}
+                                        </option>
+                                    ))}
+                                </select>
+                            </label>
+                            <label>
+                                {pickLocaleText(locale, {
+                                    en: 'Price',
+                                    fr: 'Prix',
+                                    es: 'Precio',
+                                    'pt-br': 'Preço',
+                                    de: 'Preis'
+                                })}
+                                <select name="price" defaultValue="">
+                                    {priceOptions.map((option) => (
+                                        <option key={option.value} value={option.value}>
+                                            {option.label}
+                                        </option>
+                                    ))}
+                                </select>
+                            </label>
+                            <label>
+                                PocketMine
+                                <select name="version" defaultValue="">
+                                    <option value="">
+                                        {pickLocaleText(locale, {
+                                            en: 'All versions',
+                                            fr: 'Toutes versions',
+                                            es: 'Todas las versiones',
+                                            'pt-br': 'Todas as versões',
+                                            de: 'Alle Versionen'
+                                        })}
+                                    </option>
+                                    {VERSION_OPTIONS.map((version) => (
+                                        <option key={version} value={version}>
+                                            {version}
+                                        </option>
+                                    ))}
+                                </select>
+                            </label>
+                        </div>
+                    </form>
+
                     <div className="chip-row">
-                        {highlightChips.map((chip) => (
-                            <span key={chip} className="chip">
-                                {chip}
-                            </span>
+                        {quickLinks.map((item) => (
+                            <Link
+                                key={item.href}
+                                href={withLocalePath(item.href, locale)}
+                                className="chip chip-link"
+                            >
+                                {item.label}
+                            </Link>
                         ))}
                     </div>
                 </div>
 
                 <div className="hero-panel">
-                    <div className="hero-card">
-                        <MediaImage
-                            src={heroImage}
-                            fallbackSrc={fallbackImage}
-                            alt={pickLocaleText(locale, {
-                                en: 'Featured PocketMine plugin',
-                                fr: 'Plugin PocketMine mis en avant',
-                                es: 'Plugin PocketMine destacado',
-                                'pt-br': 'Plugin PocketMine em destaque',
-                                de: 'Empfohlenes PocketMine-Plugin'
-                            })}
-                            className="media-image media-image--tall"
-                        />
+                    <div className="hero-card hero-browser-card">
                         <div className="hero-card-body">
                             <div className="badge-row">
                                 <span className="pill">
                                     {pickLocaleText(locale, {
-                                        en: 'Featured',
-                                        fr: 'En vedette',
-                                        es: 'Destacado',
-                                        'pt-br': 'Destaque',
-                                        de: 'Empfohlen'
+                                        en: 'Quick Browse',
+                                        fr: 'Navigation rapide',
+                                        es: 'Exploración rápida',
+                                        'pt-br': 'Navegação rápida',
+                                        de: 'Schnellsuche'
                                     })}
                                 </span>
                                 <span className="hero-tag">PocketMine-MP</span>
                             </div>
-                            <h3>{heroTitle}</h3>
-                            <p>{heroDescription}</p>
+                            <h3>
+                                {pickLocaleText(locale, {
+                                    en: 'Jump straight into popular categories.',
+                                    fr: 'Allez directement vers les catégories populaires.',
+                                    es: 'Ve directo a las categorías populares.',
+                                    'pt-br':
+                                        'Acesse direto as categorias mais populares.',
+                                    de: 'Direkt zu beliebten Kategorien springen.'
+                                })}
+                            </h3>
+                            <div className="hero-browse-list">
+                                {quickLinks.map((item) => (
+                                    <Link
+                                        key={`browse-${item.href}`}
+                                        href={withLocalePath(item.href, locale)}
+                                        className="hero-browse-item"
+                                    >
+                                        <span>{item.label}</span>
+                                        <span aria-hidden="true">→</span>
+                                    </Link>
+                                ))}
+                            </div>
                             <div className="hero-card-footer">
-                                <span className="price">{heroPrice}</span>
                                 <Link
                                     className="text-link"
-                                    href={withLocalePath(heroHref, locale)}
+                                    href={withLocalePath('/plugins', locale)}
                                 >
                                     {pickLocaleText(locale, {
-                                        en: 'View details',
-                                        fr: 'Voir les détails',
-                                        es: 'Ver detalles',
-                                        'pt-br': 'Ver detalhes',
-                                        de: 'Details ansehen'
+                                        en: 'Browse full catalog',
+                                        fr: 'Voir le catalogue',
+                                        es: 'Ver catálogo',
+                                        'pt-br': 'Ver catálogo',
+                                        de: 'Gesamten Katalog ansehen'
                                     })}
                                 </Link>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="hero-mini-grid">
-                        {quickStats.map((stat) => (
-                            <div key={stat.title} className="mini-card">
-                                <h4>{stat.title}</h4>
-                                <p>{stat.detail}</p>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </div>

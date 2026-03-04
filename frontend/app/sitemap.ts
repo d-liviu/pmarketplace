@@ -3,7 +3,7 @@ import { getApiBaseUrl } from './lib/apiBase'
 import { toSlug } from './lib/slug'
 import { SUPPORTED_LOCALES, withLocalePath } from './lib/i18n'
 
-const siteUrl = 'https://pocketminehub.com'
+const siteUrl = 'https://pmarketplace.com'
 const apiBaseUrl = getApiBaseUrl()
 
 type Plugin = {
